@@ -135,7 +135,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="hdr-sub">Gestión de confirmación de citas</div>
     </div>
   </div>
-  <div class="hdr-right" id="hdr-meta">Mayo 2026 · 1.544 registros</div>
+  <div class="hdr-right" id="hdr-meta">Junio 2026 · 500 registros</div>
 </div>
 
 <!-- TABS -->
@@ -149,8 +149,11 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
 <!-- FILTER BAR -->
 <div class="filterbar">
   <label>Período:</label>
-  <select class="fsel" id="periodo-sel" onchange="onPeriodo()">
-    <option value="todos" selected>Mayo completo</option>
+      <select class="fsel" id="periodo-sel" onchange="onPeriodo()">
+    <option value="jun" selected>Junio 2026 (9 días)</option>
+    <option value="may">Mayo 2026 (27 días)</option>
+    <option value="abr">Abril 2026 (24 días)</option>
+    <option value="todos">Todos los meses</option>
     <option value="fecha">Fecha específica</option>
     <option value="rango">Rango personalizado</option>
   </select>
@@ -158,115 +161,214 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
   <div id="fecha-wrap" class="fdate-wrap">
     <label>Fecha:</label>
     <select class="fsel" id="fecha-sel" onchange="applyFilter()">
-      <option value="1">1 may 2026</option>
-      <option value="2">2 may 2026</option>
-      <option value="3">3 may 2026</option>
-      <option value="4">4 may 2026</option>
-      <option value="5">5 may 2026</option>
-      <option value="6">6 may 2026</option>
-      <option value="7">7 may 2026</option>
-      <option value="8">8 may 2026</option>
-      <option value="9">9 may 2026</option>
-      <option value="10">10 may 2026</option>
-      <option value="11">11 may 2026</option>
-      <option value="12">12 may 2026</option>
-      <option value="13">13 may 2026</option>
-      <option value="14">14 may 2026</option>
-      <option value="15">15 may 2026</option>
-      <option value="19">19 may 2026</option>
-      <option value="20">20 may 2026</option>
-      <option value="21">21 may 2026</option>
-      <option value="22">22 may 2026</option>
-      <option value="23">23 may 2026</option>
-      <option value="24">24 may 2026</option>
-      <option value="25">25 may 2026</option>
-      <option value="26">26 may 2026</option>
-      <option value="27">27 may 2026</option>
-      <option value="28">28 may 2026</option>
-      <option value="29">29 may 2026</option>
-      <option value="30" selected>30 may 2026</option>
+      <option value="401">1 abr 2026</option>
+      <option value="404">4 abr 2026</option>
+      <option value="407">7 abr 2026</option>
+      <option value="408">8 abr 2026</option>
+      <option value="409">9 abr 2026</option>
+      <option value="410">10 abr 2026</option>
+      <option value="413">13 abr 2026</option>
+      <option value="414">14 abr 2026</option>
+      <option value="415">15 abr 2026</option>
+      <option value="416">16 abr 2026</option>
+      <option value="417">17 abr 2026</option>
+      <option value="418">18 abr 2026</option>
+      <option value="419">19 abr 2026</option>
+      <option value="420">20 abr 2026</option>
+      <option value="421">21 abr 2026</option>
+      <option value="422">22 abr 2026</option>
+      <option value="423">23 abr 2026</option>
+      <option value="424">24 abr 2026</option>
+      <option value="425">25 abr 2026</option>
+      <option value="426">26 abr 2026</option>
+      <option value="427">27 abr 2026</option>
+      <option value="428">28 abr 2026</option>
+      <option value="429">29 abr 2026</option>
+      <option value="430">30 abr 2026</option>
+      <option value="501">1 may 2026</option>
+      <option value="502">2 may 2026</option>
+      <option value="503">3 may 2026</option>
+      <option value="504">4 may 2026</option>
+      <option value="505">5 may 2026</option>
+      <option value="506">6 may 2026</option>
+      <option value="507">7 may 2026</option>
+      <option value="508">8 may 2026</option>
+      <option value="509">9 may 2026</option>
+      <option value="510">10 may 2026</option>
+      <option value="511">11 may 2026</option>
+      <option value="512">12 may 2026</option>
+      <option value="513">13 may 2026</option>
+      <option value="514">14 may 2026</option>
+      <option value="515">15 may 2026</option>
+      <option value="519">19 may 2026</option>
+      <option value="520">20 may 2026</option>
+      <option value="521">21 may 2026</option>
+      <option value="522">22 may 2026</option>
+      <option value="523">23 may 2026</option>
+      <option value="524">24 may 2026</option>
+      <option value="525">25 may 2026</option>
+      <option value="526">26 may 2026</option>
+      <option value="527">27 may 2026</option>
+      <option value="528">28 may 2026</option>
+      <option value="529">29 may 2026</option>
+      <option value="530">30 may 2026</option>
+      <option value="602">2 jun 2026</option>
+      <option value="603">3 jun 2026</option>
+      <option value="604">4 jun 2026</option>
+      <option value="605">5 jun 2026</option>
+      <option value="606">6 jun 2026</option>
+      <option value="607">7 jun 2026</option>
+      <option value="608">8 jun 2026</option>
+      <option value="609">9 jun 2026</option>
+      <option value="610" selected>10 jun 2026</option>
     </select>
   </div>
 
   <div id="rango-wrap" class="fdate-wrap">
     <label>Desde:</label>
     <select class="fsel" id="rango-desde" onchange="applyFilter()">
-      <option value="1" selected>1 may 2026</option>
-      <option value="2">2 may 2026</option>
-      <option value="3">3 may 2026</option>
-      <option value="4">4 may 2026</option>
-      <option value="5">5 may 2026</option>
-      <option value="6">6 may 2026</option>
-      <option value="7">7 may 2026</option>
-      <option value="8">8 may 2026</option>
-      <option value="9">9 may 2026</option>
-      <option value="10">10 may 2026</option>
-      <option value="11">11 may 2026</option>
-      <option value="12">12 may 2026</option>
-      <option value="13">13 may 2026</option>
-      <option value="14">14 may 2026</option>
-      <option value="15">15 may 2026</option>
-      <option value="19">19 may 2026</option>
-      <option value="20">20 may 2026</option>
-      <option value="21">21 may 2026</option>
-      <option value="22">22 may 2026</option>
-      <option value="23">23 may 2026</option>
-      <option value="24">24 may 2026</option>
-      <option value="25">25 may 2026</option>
-      <option value="26">26 may 2026</option>
-      <option value="27">27 may 2026</option>
-      <option value="28">28 may 2026</option>
-      <option value="29">29 may 2026</option>
-      <option value="30">30 may 2026</option>
+      <option value="401" selected>1 abr 2026</option>
+      <option value="404">4 abr 2026</option>
+      <option value="407">7 abr 2026</option>
+      <option value="408">8 abr 2026</option>
+      <option value="409">9 abr 2026</option>
+      <option value="410">10 abr 2026</option>
+      <option value="413">13 abr 2026</option>
+      <option value="414">14 abr 2026</option>
+      <option value="415">15 abr 2026</option>
+      <option value="416">16 abr 2026</option>
+      <option value="417">17 abr 2026</option>
+      <option value="418">18 abr 2026</option>
+      <option value="419">19 abr 2026</option>
+      <option value="420">20 abr 2026</option>
+      <option value="421">21 abr 2026</option>
+      <option value="422">22 abr 2026</option>
+      <option value="423">23 abr 2026</option>
+      <option value="424">24 abr 2026</option>
+      <option value="425">25 abr 2026</option>
+      <option value="426">26 abr 2026</option>
+      <option value="427">27 abr 2026</option>
+      <option value="428">28 abr 2026</option>
+      <option value="429">29 abr 2026</option>
+      <option value="430">30 abr 2026</option>
+      <option value="501">1 may 2026</option>
+      <option value="502">2 may 2026</option>
+      <option value="503">3 may 2026</option>
+      <option value="504">4 may 2026</option>
+      <option value="505">5 may 2026</option>
+      <option value="506">6 may 2026</option>
+      <option value="507">7 may 2026</option>
+      <option value="508">8 may 2026</option>
+      <option value="509">9 may 2026</option>
+      <option value="510">10 may 2026</option>
+      <option value="511">11 may 2026</option>
+      <option value="512">12 may 2026</option>
+      <option value="513">13 may 2026</option>
+      <option value="514">14 may 2026</option>
+      <option value="515">15 may 2026</option>
+      <option value="519">19 may 2026</option>
+      <option value="520">20 may 2026</option>
+      <option value="521">21 may 2026</option>
+      <option value="522">22 may 2026</option>
+      <option value="523">23 may 2026</option>
+      <option value="524">24 may 2026</option>
+      <option value="525">25 may 2026</option>
+      <option value="526">26 may 2026</option>
+      <option value="527">27 may 2026</option>
+      <option value="528">28 may 2026</option>
+      <option value="529">29 may 2026</option>
+      <option value="530">30 may 2026</option>
+      <option value="602">2 jun 2026</option>
+      <option value="603">3 jun 2026</option>
+      <option value="604">4 jun 2026</option>
+      <option value="605">5 jun 2026</option>
+      <option value="606">6 jun 2026</option>
+      <option value="607">7 jun 2026</option>
+      <option value="608">8 jun 2026</option>
+      <option value="609">9 jun 2026</option>
+      <option value="610">10 jun 2026</option>
     </select>
     <label>Hasta:</label>
     <select class="fsel" id="rango-hasta" onchange="applyFilter()">
-      <option value="1">1 may 2026</option>
-      <option value="2">2 may 2026</option>
-      <option value="3">3 may 2026</option>
-      <option value="4">4 may 2026</option>
-      <option value="5">5 may 2026</option>
-      <option value="6">6 may 2026</option>
-      <option value="7">7 may 2026</option>
-      <option value="8">8 may 2026</option>
-      <option value="9">9 may 2026</option>
-      <option value="10">10 may 2026</option>
-      <option value="11">11 may 2026</option>
-      <option value="12">12 may 2026</option>
-      <option value="13">13 may 2026</option>
-      <option value="14">14 may 2026</option>
-      <option value="15">15 may 2026</option>
-      <option value="19">19 may 2026</option>
-      <option value="20">20 may 2026</option>
-      <option value="21">21 may 2026</option>
-      <option value="22">22 may 2026</option>
-      <option value="23">23 may 2026</option>
-      <option value="24">24 may 2026</option>
-      <option value="25">25 may 2026</option>
-      <option value="26">26 may 2026</option>
-      <option value="27">27 may 2026</option>
-      <option value="28">28 may 2026</option>
-      <option value="29">29 may 2026</option>
-      <option value="30" selected>30 may 2026</option>
+      <option value="401">1 abr 2026</option>
+      <option value="404">4 abr 2026</option>
+      <option value="407">7 abr 2026</option>
+      <option value="408">8 abr 2026</option>
+      <option value="409">9 abr 2026</option>
+      <option value="410">10 abr 2026</option>
+      <option value="413">13 abr 2026</option>
+      <option value="414">14 abr 2026</option>
+      <option value="415">15 abr 2026</option>
+      <option value="416">16 abr 2026</option>
+      <option value="417">17 abr 2026</option>
+      <option value="418">18 abr 2026</option>
+      <option value="419">19 abr 2026</option>
+      <option value="420">20 abr 2026</option>
+      <option value="421">21 abr 2026</option>
+      <option value="422">22 abr 2026</option>
+      <option value="423">23 abr 2026</option>
+      <option value="424">24 abr 2026</option>
+      <option value="425">25 abr 2026</option>
+      <option value="426">26 abr 2026</option>
+      <option value="427">27 abr 2026</option>
+      <option value="428">28 abr 2026</option>
+      <option value="429">29 abr 2026</option>
+      <option value="430">30 abr 2026</option>
+      <option value="501">1 may 2026</option>
+      <option value="502">2 may 2026</option>
+      <option value="503">3 may 2026</option>
+      <option value="504">4 may 2026</option>
+      <option value="505">5 may 2026</option>
+      <option value="506">6 may 2026</option>
+      <option value="507">7 may 2026</option>
+      <option value="508">8 may 2026</option>
+      <option value="509">9 may 2026</option>
+      <option value="510">10 may 2026</option>
+      <option value="511">11 may 2026</option>
+      <option value="512">12 may 2026</option>
+      <option value="513">13 may 2026</option>
+      <option value="514">14 may 2026</option>
+      <option value="515">15 may 2026</option>
+      <option value="519">19 may 2026</option>
+      <option value="520">20 may 2026</option>
+      <option value="521">21 may 2026</option>
+      <option value="522">22 may 2026</option>
+      <option value="523">23 may 2026</option>
+      <option value="524">24 may 2026</option>
+      <option value="525">25 may 2026</option>
+      <option value="526">26 may 2026</option>
+      <option value="527">27 may 2026</option>
+      <option value="528">28 may 2026</option>
+      <option value="529">29 may 2026</option>
+      <option value="530">30 may 2026</option>
+      <option value="602">2 jun 2026</option>
+      <option value="603">3 jun 2026</option>
+      <option value="604">4 jun 2026</option>
+      <option value="605">5 jun 2026</option>
+      <option value="606">6 jun 2026</option>
+      <option value="607">7 jun 2026</option>
+      <option value="608">8 jun 2026</option>
+      <option value="609">9 jun 2026</option>
+      <option value="610" selected>10 jun 2026</option>
     </select>
   </div>
 
-  <span class="pill" id="pill-citas">1.544 citas</span>
+  <span class="pill" id="pill-citas">500 citas</span>
 </div>
 
 <!-- ===== RESUMEN ===== -->
 <div class="page active" id="p-resumen">
   <p class="lbl">Indicadores clave del período</p>
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-l">Total gestionadas</div><div class="kpi-n" id="k-total">1.544</div><div class="kpi-s" id="k-total-s">~57 citas/día promedio</div></div>
-    <div class="kpi r"><div class="kpi-l">Contactadas</div><div class="kpi-n" id="k-contact">1.311</div><div class="kpi-s"><span class="kpi-p" id="k-contact-p">84.9%</span> contact ratio</div></div>
-    <div class="kpi g"><div class="kpi-l">Confirman asistencia</div><div class="kpi-n" id="k-asiste">1.052</div><div class="kpi-s"><span class="kpi-p" id="k-asiste-p">95.8%</span> de encuestados</div></div>
-    <div class="kpi d"><div class="kpi-l">Cancelaciones</div><div class="kpi-n" id="k-cancel">46</div><div class="kpi-s"><span class="kpi-p" id="k-cancel-p">4.2%</span> cupos liberados</div></div>
+    <div class="kpi"><div class="kpi-l">Total gestionadas</div><div class="kpi-n" id="k-total">500</div><div class="kpi-s" id="k-total-s">~56 citas/día promedio</div></div>
+    <div class="kpi r"><div class="kpi-l">Contactadas</div><div class="kpi-n" id="k-contact">415</div><div class="kpi-s"><span class="kpi-p" id="k-contact-p">83.0%</span> contact ratio</div></div>
+    <div class="kpi g"><div class="kpi-l">Confirman asistencia</div><div class="kpi-n" id="k-asiste">323</div><div class="kpi-s"><span class="kpi-p" id="k-asiste-p">95.8%</span> de encuestados</div></div>
+    <div class="kpi d"><div class="kpi-l">Cancelaciones</div><div class="kpi-n" id="k-cancel">14</div><div class="kpi-s"><span class="kpi-p" id="k-cancel-p">4.2%</span> cupos liberados</div></div>
   </div>
 
   <div class="card ra">
-    <div class="ch"><span class="ct">Cupos liberados por especialidad</span><span class="pill-r" id="badge-cupos">46 cupos libres</span></div>
-    <div class="cd" id="cupos-desc"><strong>46 pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.</div>
+    <div class="ch"><span class="ct">Cupos liberados por especialidad</span><span class="pill-r" id="badge-cupos">14 cupos libres</span></div>
+    <div class="cd" id="cupos-desc"><strong>14 pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.</div>
     <div class="cupos-g" id="cupos-grid">
       <div class="cp"><div class="cp-l">Consulta Cardiología</div><div class="cp-n" id="c-cardio">1</div><div class="cp-s">cupos</div></div>
       <div class="cp"><div class="cp-l">Eco Transtorácico</div><div class="cp-n" id="c-eco">0</div><div class="cp-s">cupos</div></div>
@@ -277,7 +379,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="cp"><div class="cp-l">Electrofisiología</div><div class="cp-n" id="c-electro">0</div><div class="cp-s">cupos</div></div>
       <div class="cp"><div class="cp-l">Hemodinámica</div><div class="cp-n" id="c-hemo">0</div><div class="cp-s">cupos</div></div>
       <div class="cp"><div class="cp-l">Otro</div><div class="cp-n" id="c-rehab">0</div><div class="cp-s">cupos</div></div>
-      <div class="cp-tot"><div class="cp-tot-l">Total recuperable</div><div class="cp-tot-n" id="c-tot">46</div><div class="cp-tot-l">cupos totales</div></div>
+      <div class="cp-tot"><div class="cp-tot-l">Total recuperable</div><div class="cp-tot-n" id="c-tot">14</div><div class="cp-tot-l">cupos totales</div></div>
     </div>
     <div class="aa">⚠ <strong>Consulta Cardiología y Mesa Basculante</strong> registraron 1 cancelación cada una. Tasa general muy baja: 3.5% sobre encuestados.</div>
     <p class="note">* Detalle de agenda disponible en el archivo DETALLE de cada informe diario</p>
@@ -355,7 +457,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
     <div class="card">
       <p class="lbl">Especialidades con más cancelaciones</p>
       <div class="sl" id="mod-list"></div>
-      <div class="sep"><span>Total cancelaciones</span><span id="mod-total" style="font-weight:600;">46 · 3.0% base</span></div>
+      <div class="sep"><span>Total cancelaciones</span><span id="mod-total" style="font-weight:600;">14 · 2.8% base</span></div>
     </div>
     <div class="card">
       <p class="lbl">Cancelaciones por sede</p>
@@ -364,7 +466,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
         <div class="si"><span class="sr">2</span><span class="sn">Ibagué</span><span class="sc" id="sede-2">1</span><span class="bdg b-b" id="sede-2p">4.0%</span></div>
         <div class="si"><span class="sr">3</span><span class="sn">Honda</span><span class="sc" id="sede-3">0</span><span class="bdg b-g" id="sede-3p">0.0%</span></div>
       </div>
-      <div class="sep"><span>Total</span><span style="font-weight:600;" id="sede-total">46</span></div>
+      <div class="sep"><span>Total</span><span style="font-weight:600;" id="sede-total">14</span></div>
       <div class="at">💡 Honda: 0 cancelaciones. Girardot e Ibagué con 1 cancelación cada una — tasas dentro del rango normal.</div>
     </div>
   </div>
@@ -430,50 +532,86 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
 <script>
 // =================== DATOS ===================
 const DATA = {
-  1:{total:30,answered:28,vm:2,na:0,busy:0,inv:0,will:24,wont:0,ignored:4,tel2:28,dur:[1,1,3,23],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:16,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
-  2:{total:28,answered:27,vm:1,na:0,busy:0,inv:0,will:22,wont:0,ignored:5,tel2:28,dur:[0,1,7,19],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:14,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
-  3:{total:29,answered:24,vm:1,na:2,busy:1,inv:1,will:21,wont:1,ignored:2,tel2:26,dur:[0,0,2,22],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:15,c:1}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
-  4:{total:20,answered:18,vm:1,na:1,busy:0,inv:0,will:16,wont:0,ignored:2,tel2:19,dur:[0,0,5,13],mod:{CARDIOLOGIA:{t:12,c:0},ECOA_TRANSTORACICO:{t:3,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:5,a:4,c:0},honda:{t:0,a:0,c:0}}},
-  5:{total:39,answered:32,vm:1,na:6,busy:0,inv:0,will:23,wont:3,ignored:6,tel2:38,dur:[1,2,4,25],mod:{CARDIOLOGIA:{t:19,c:1},ECO_TRANSTORACICO:{t:12,c:1},MESA_BASCULANTE:{t:8,c:1}},sede:{girardot:{t:19,a:18,c:1},ibague:{t:8,a:6,c:1},honda:{t:0,a:0,c:0}}},
-  6:{total:24,answered:22,vm:1,na:0,busy:0,inv:1,will:17,wont:0,ignored:5,tel2:23,dur:[0,3,4,15],mod:{CAMINATA:{t:7,c:0},CARDIOLOGIA:{t:4,c:0},ECO_TRANSTORACICO:{t:9,c:0},MESA_BASCULANTE:{t:4,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:24,a:22,c:0},honda:{t:0,a:0,c:0}}},
-  7:{total:26,answered:22,vm:2,na:1,busy:1,inv:0,will:21,wont:0,ignored:1,tel2:24,dur:[1,0,2,19],mod:{CAMINATA:{t:8,c:0},CARDIOLOGIA:{t:8,c:0},ECO_TRANSTORACICO:{t:8,c:0},MESA_BASCULANTE:{t:2,c:0}},sede:{girardot:{t:16,a:13,c:0},ibague:{t:9,a:9,c:0},honda:{t:0,a:0,c:0}}},
-  8:{total:137,answered:117,vm:7,na:11,busy:2,inv:0,will:94,wont:2,ignored:21,tel2:124,dur:[3,3,6,105],mod:{CARDIOLOGIA:{t:77,c:1},ECO_TRANSTORACICO:{t:43,c:1},MESA_BASCULANTE:{t:3,c:0},PRUEBA_ESFUERZO:{t:14,c:0}},sede:{girardot:{t:77,a:62,c:1},ibague:{t:19,a:18,c:1},honda:{t:0,a:0,c:0}}},
-  9:{total:134,answered:111,vm:6,na:17,busy:0,inv:0,will:89,wont:8,ignored:14,tel2:119,dur:[1,1,10,99],mod:{CARDIOLOGIA:{t:62,c:3},ECO_ESTRES:{t:9,c:2},ECO_TRANSTORACICO:{t:45,c:2},PRUEBA_ESFUERZO:{t:18,c:1}},sede:{girardot:{t:82,a:69,c:3},ibague:{t:52,a:42,c:5},honda:{t:0,a:0,c:0}}},
-  10:{total:83,answered:72,vm:6,na:5,busy:0,inv:0,will:58,wont:2,ignored:12,tel2:73,dur:[2,3,4,63],mod:{CARDIOLOGIA:{t:33,c:2},ECO_TRANSTORACICO:{t:50,c:0}},sede:{girardot:{t:83,a:72,c:2},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
-  11:{total:90,answered:72,vm:7,na:9,busy:0,inv:2,will:58,wont:0,ignored:14,tel2:78,dur:[6,2,3,61],mod:{CARDIOLOGIA:{t:41,c:0},ECO_DE_ESTRES:{t:6,c:0},ECO_TRANSTORACICO:{t:43,c:0}},sede:{girardot:{t:84,a:67,c:0},ibague:{t:6,a:5,c:0},honda:{t:0,a:0,c:0}}},
-  12:{total:49,answered:40,vm:2,na:6,busy:0,inv:0,will:33,wont:1,ignored:6,tel2:41,dur:[2,1,3,34],mod:{CAMINATA:{t:6,c:0},CARDIOLOGIA:{t:12,c:0},ECO_ESTRES:{t:8,c:0},ECO_TRANSTORACICO:{t:20,c:0},MESA_BASCULANTE:{t:3,c:1}},sede:{girardot:{t:16,a:13,c:0},ibague:{t:26,a:22,c:1},honda:{t:0,a:0,c:0}}},
-  13:{total:67,answered:54,vm:5,na:7,busy:0,inv:1,will:42,wont:3,ignored:9,tel2:60,dur:[2,2,2,48],mod:{CARDIOLOGIA:{t:26,c:1},ECO_DE_ESTRES:{t:7,c:1},ECO_TRANSTORACICO:{t:34,c:1}},sede:{girardot:{t:28,a:22,c:1},ibague:{t:13,a:11,c:2},honda:{t:26,a:21,c:0}}},
-  14:{total:48,answered:40,vm:3,na:5,busy:0,inv:0,will:35,wont:1,ignored:4,tel2:47,dur:[1,1,7,31],mod:{CARDIOLOGIA:{t:28,c:1},ECO_ESTRESS:{t:7,c:0},ECO_TRANSTORACICO:{t:6,c:0},MESA_BASCULANTE:{t:3,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:29,a:26,c:0},ibague:{t:19,a:14,c:1},honda:{t:0,a:0,c:0}}},
-  15:{total:34,answered:28,vm:4,na:2,busy:0,inv:0,will:23,wont:1,ignored:4,tel2:31,dur:[1,1,4,22],mod:{CAMINATA:{t:2,c:0},CARDIOLOGIA:{t:11,c:0},ECO_TRANSTORACICO:{t:16,c:1},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:5,a:3,c:0},honda:{t:27,a:24,c:1}}},
-  19:{total:85,answered:77,vm:3,na:5,busy:0,inv:0,will:58,wont:4,ignored:15,tel2:79,dur:[4,0,17,56],mod:{CAMINATA:{t:11,c:0},CARDIOLOGIA:{t:30,c:2},ECO_DE_ESTRES:{t:7,c:1},ECO_TRANSTORACICO:{t:31,c:1},MESA_BASCULANTE:{t:5,c:0},PRUEBA_ESFUERZO:{t:1,c:0}},sede:{girardot:{t:34,a:31,c:1},ibague:{t:16,a:15,c:0},honda:{t:26,a:22,c:3}}},
-  20:{total:75,answered:66,vm:2,na:7,busy:0,inv:0,will:55,wont:2,ignored:9,tel2:62,dur:[2,0,6,58],mod:{CARDIOLOGIA:{t:31,c:1},ECO_ESTRES:{t:13,c:0},ECO_TRANSTORACICO:{t:26,c:0},MESA_BASCULANTE:{t:5,c:1}},sede:{girardot:{t:30,a:26,c:1},ibague:{t:25,a:23,c:1},honda:{t:20,a:17,c:0}}},
-  21:{total:96,answered:79,vm:6,na:10,busy:0,inv:1,will:61,wont:4,ignored:14,tel2:90,dur:[4,1,15,59],mod:{CAMINATA:{t:8,c:0},CARDIOLOGIA:{t:42,c:2},ECO_DE_ESTRES:{t:6,c:1},ECO_TRANSESOFAGICO:{t:7,c:0},ECO_TRANSTORACICO:{t:33,c:1}},sede:{girardot:{t:33,a:28,c:1},ibague:{t:14,a:10,c:1},honda:{t:20,a:14,c:1}}},
-  22:{total:32,answered:28,vm:2,na:2,busy:0,inv:0,will:25,wont:0,ignored:3,tel2:27,dur:[0,1,3,24],mod:{CAMINATA:{t:7,c:0},ECO_TRANSTORACICO:{t:18,c:0},MESA_BASCULANTE:{t:3,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:32,a:28,c:0},honda:{t:0,a:0,c:0}}},
-  23:{total:67,answered:54,vm:3,na:10,busy:0,inv:0,will:42,wont:3,ignored:9,tel2:59,dur:[2,3,7,42],mod:{CARDIOLOGIA:{t:32,c:3},ECO_DE_ESTRES:{t:6,c:0},ECO_TRANSESOFAGICO:{t:7,c:0},ECO_TRANSTORACICO:{t:22,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:67,a:54,c:3},honda:{t:0,a:0,c:0}}},
-  24:{total:31,answered:29,vm:0,na:1,busy:0,inv:1,will:21,wont:1,ignored:7,tel2:28,dur:[1,1,5,22],mod:{CARDIOLOGIA:{t:18,c:0},ECO_TRANSTORACICO:{t:13,c:1}},sede:{girardot:{t:31,a:29,c:1},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
-  25:{total:25,answered:25,vm:0,na:0,busy:0,inv:0,will:18,wont:3,ignored:4,tel2:23,dur:[0,3,3,19],mod:{CARDIOLOGIA:{t:15,c:2},ECO_DE_ESTRESS:{t:4,c:1},MESA_BASCULANTE:{t:2,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:7,a:7,c:1},ibague:{t:18,a:18,c:2},honda:{t:0,a:0,c:0}}},
-  26:{total:81,answered:67,vm:7,na:7,busy:0,inv:0,will:53,wont:1,ignored:13,tel2:74,dur:[2,2,9,54],mod:{CARDIOLOGIA:{t:33,c:0},ECO_DE_ESTRES:{t:22,c:1},ECO_TRANSTORACICO:{t:26,c:0}},sede:{girardot:{t:52,a:44,c:1},ibague:{t:20,a:19,c:0},honda:{t:0,a:0,c:0}}},
-  27:{total:17,answered:17,vm:0,na:0,busy:0,inv:0,will:14,wont:0,ignored:3,tel2:16,dur:[0,1,3,13],mod:{CARDIOLOGIA:{t:4,c:0},ECO_TRANSTORACICO:{t:8,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:17,a:17,c:0},honda:{t:0,a:0,c:0}}},
-  28:{total:78,answered:64,vm:5,na:8,busy:1,inv:0,will:51,wont:1,ignored:12,tel2:74,dur:[3,1,3,57],mod:{CARDIOLOGIA:{t:42,c:1},ECO_TRANSTORACICO:{t:31,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:29,a:23,c:1},ibague:{t:5,a:4,c:0},honda:{t:0,a:0,c:0}}},
-  29:{total:81,answered:66,vm:6,na:9,busy:0,inv:0,will:51,wont:3,ignored:12,tel2:75,dur:[1,1,12,52],mod:{CARDIOLOGIA:{t:28,c:0},ECO_DE_ESTRESS:{t:10,c:0},ECO_TRANSTORACICO:{t:36,c:2},MESA_BASCULANTE:{t:3,c:1},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:58,a:47,c:1},ibague:{t:23,a:19,c:2},honda:{t:0,a:0,c:0}}},
-  30:{total:38,answered:32,vm:1,na:5,busy:0,inv:0,will:27,wont:2,ignored:3,tel2:28,dur:[1,4,2,25],mod:{CARDIOLOGIA:{t:25,c:1},ECO_TRANSTORACICO:{t:13,c:1}},sede:{girardot:{t:38,a:32,c:2},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  401:{total:73,answered:64,vm:4,na:5,busy:0,inv:0,will:55,wont:0,ignored:9,tel2:69,dur:[1,1,5,57],mod:{CARDIOLOGIA:{t:44,c:0},ECO_STRESS:{t:12,c:0},ECO_TRANSTORACICO:{t:17,c:0}},sede:{girardot:{t:55,a:48,c:0},ibague:{t:18,a:16,c:0},honda:{t:0,a:0,c:0}}},
+  404:{total:32,answered:27,vm:2,na:3,busy:0,inv:0,will:21,wont:2,ignored:4,tel2:28,dur:[1,0,5,21],mod:{CARDIOLOGIA:{t:16,c:0},ECO_STRESS:{t:7,c:0},ECO_TRANSTORACICO:{t:9,c:2}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:32,a:27,c:2},honda:{t:0,a:0,c:0}}},
+  407:{total:35,answered:31,vm:2,na:1,busy:1,inv:0,will:26,wont:0,ignored:5,tel2:33,dur:[4,0,3,24],mod:{PRUEBA_ESFUERZO:{t:8,c:0},CARDIOLOGIA:{t:16,c:0},ECOC_TRANSTORACICO:{t:8,c:0},MESA_BASCULANTE:{t:3,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:23,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  408:{total:13,answered:11,vm:2,na:0,busy:0,inv:0,will:10,wont:0,ignored:1,tel2:13,dur:[1,0,0,10],mod:{CARDIOLOGIA:{t:5,c:0},ECO_TRANSTORACICO:{t:8,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:13,a:11,c:0},honda:{t:0,a:0,c:0}}},
+  409:{total:42,answered:36,vm:2,na:3,busy:1,inv:0,will:28,wont:2,ignored:6,tel2:38,dur:[1,1,1,33],mod:{PRUEBA_ESFUERZO:{t:5,c:1},CARDIOLOGIA:{t:10,c:1},ECO_DE_STRESS:{t:6,c:0},ECO_TRANSTORACICO:{t:21,c:0}},sede:{girardot:{t:31,a:26,c:1},ibague:{t:11,a:10,c:1},honda:{t:0,a:0,c:0}}},
+  410:{total:14,answered:13,vm:0,na:1,busy:0,inv:0,will:12,wont:0,ignored:1,tel2:13,dur:[0,1,0,12],mod:{PRUEBA_ESFUERZO:{t:10,c:0},MESA_BASCULANTE:{t:4,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:10,a:9,c:0},honda:{t:0,a:0,c:0}}},
+  413:{total:96,answered:84,vm:3,na:8,busy:0,inv:1,will:68,wont:2,ignored:14,tel2:90,dur:[3,1,8,72],mod:{CARDIOLOGIA:{t:36,c:0},ECO_DE_STRESS:{t:17,c:1},ECO_TRANSTORACICO:{t:36,c:1},MESA_BASCULANTE:{t:3,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:39,a:34,c:1},ibague:{t:37,a:35,c:0},honda:{t:20,a:15,c:1}}},
+  414:{total:53,answered:46,vm:4,na:3,busy:0,inv:0,will:38,wont:1,ignored:7,tel2:53,dur:[2,0,6,38],mod:{CARDIOLOGIA:{t:27,c:1},ECO_DE_STRESS:{t:7,c:0},ECO_TRANSTORACICO:{t:19,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:21,a:19,c:0},honda:{t:27,a:23,c:1}}},
+  415:{total:58,answered:47,vm:2,na:8,busy:0,inv:0,will:42,wont:3,ignored:2,tel2:53,dur:[0,0,2,45],mod:{CARDIOLOGIA:{t:22,c:2},ECO_DE_STRESS:{t:7,c:1},ECO_TRANSTORACICO:{t:24,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:14,a:9,c:1},ibague:{t:17,a:13,c:1},honda:{t:27,a:25,c:1}}},
+  416:{total:85,answered:75,vm:5,na:4,busy:0,inv:1,will:61,wont:1,ignored:13,tel2:76,dur:[2,3,9,61],mod:{CARDIOLOGIA:{t:35,c:1},ECO_DE_STRESS:{t:4,c:0},ECO_TRANSTORACICO:{t:46,c:0}},sede:{girardot:{t:23,a:19,c:0},ibague:{t:4,a:4,c:0},honda:{t:24,a:20,c:1}}},
+  417:{total:108,answered:93,vm:5,na:8,busy:2,inv:0,will:79,wont:1,ignored:13,tel2:95,dur:[5,1,11,76],mod:{CARDIOLOGIA:{t:59,c:0},ECO_TRANSTORACICO:{t:49,c:1}},sede:{girardot:{t:56,a:48,c:0},ibague:{t:0,a:0,c:0},honda:{t:22,a:20,c:0}}},
+  418:{total:83,answered:70,vm:7,na:6,busy:0,inv:0,will:55,wont:5,ignored:10,tel2:79,dur:[3,1,10,56],mod:{CARDIOLOGIA:{t:44,c:4},ECO_TRANSTORACICO:{t:39,c:1}},sede:{girardot:{t:52,a:44,c:5},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  419:{total:30,answered:29,vm:0,na:1,busy:0,inv:0,will:23,wont:0,ignored:6,tel2:30,dur:[1,0,7,21],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:16,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  420:{total:71,answered:59,vm:5,na:7,busy:0,inv:0,will:52,wont:2,ignored:5,tel2:64,dur:[0,0,8,51],mod:{CARDIOLOGIA:{t:44,c:1},ECO_DE_STRES:{t:9,c:0},ECO_TRANSESOFAGICO:{t:4,c:1},ECO_TRANSTORACICO:{t:14,c:0}},sede:{girardot:{t:19,a:15,c:1},ibague:{t:52,a:44,c:1},honda:{t:0,a:0,c:0}}},
+  421:{total:83,answered:67,vm:5,na:10,busy:0,inv:1,will:53,wont:2,ignored:12,tel2:68,dur:[5,2,7,53],mod:{CARDIOLOGIA:{t:23,c:2},ECO_DE_STRES:{t:9,c:0},ECO_TRANSESOFAGICO:{t:6,c:0},ECO_TRANSTORACICO:{t:41,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:60,a:49,c:2},ibague:{t:23,a:18,c:0},honda:{t:0,a:0,c:0}}},
+  422:{total:63,answered:54,vm:2,na:7,busy:0,inv:0,will:48,wont:0,ignored:6,tel2:55,dur:[1,1,6,46],mod:{CAMINATA:{t:13,c:0},CARDIOLOGIA:{t:20,c:0},ECO_TRANSESOFAGICO:{t:7,c:0},ECO_TRANSTORACICO:{t:18,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:33,a:28,c:0},ibague:{t:27,a:24,c:0},honda:{t:0,a:0,c:0}}},
+  423:{total:43,answered:39,vm:3,na:1,busy:0,inv:0,will:36,wont:0,ignored:3,tel2:42,dur:[0,0,4,35],mod:{CARDIOLOGIA:{t:19,c:0},ECO_DE_STRES:{t:7,c:0},ECO_TRANSTORACICO:{t:9,c:0},MESA_BASCULANTE:{t:4,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:23,a:20,c:0},ibague:{t:20,a:19,c:0},honda:{t:0,a:0,c:0}}},
+  424:{total:123,answered:102,vm:7,na:13,busy:0,inv:1,will:78,wont:3,ignored:21,tel2:119,dur:[4,4,17,77],mod:{CARDIOLOGIA:{t:47,c:1},ECO_DE_STRES:{t:6,c:0},ECO_TRANSTORACICO:{t:53,c:1},PRUEBA_ESFUERZO:{t:17,c:1}},sede:{girardot:{t:83,a:69,c:3},ibague:{t:40,a:33,c:0},honda:{t:0,a:0,c:0}}},
+  425:{total:145,answered:128,vm:4,na:11,busy:0,inv:2,will:99,wont:2,ignored:27,tel2:103,dur:[5,4,23,96],mod:{CARDIOLOGIA:{t:66,c:1},ECO_TRANSTORACICO:{t:79,c:1}},sede:{girardot:{t:91,a:80,c:2},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  426:{total:80,answered:68,vm:5,na:7,busy:0,inv:0,will:57,wont:1,ignored:10,tel2:73,dur:[2,2,9,55],mod:{CARDIOLOGIA:{t:33,c:0},ECO_TRANSTORACICO:{t:30,c:0},PRUEBA_ESFUERZO:{t:17,c:1}},sede:{girardot:{t:80,a:68,c:1},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  427:{total:129,answered:105,vm:6,na:18,busy:0,inv:0,will:85,wont:0,ignored:20,tel2:120,dur:[4,3,11,87],mod:{CARDIOLOGIA:{t:64,c:0},ECO_TRANSTORACICO:{t:48,c:0},PRUEBA_ESFUERZO:{t:17,c:0}},sede:{girardot:{t:82,a:64,c:0},ibague:{t:14,a:13,c:0},honda:{t:0,a:0,c:0}}},
+  428:{total:39,answered:35,vm:1,na:3,busy:0,inv:0,will:31,wont:1,ignored:3,tel2:38,dur:[1,0,1,33],mod:{CAMINATA:{t:8,c:0},CARDIOLOGIA:{t:3,c:0},ECO_TRANSTORACICO:{t:25,c:1},PRUEBA_ESFUERZO:{t:3,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:28,a:26,c:0},honda:{t:0,a:0,c:0}}},
+  429:{total:15,answered:12,vm:1,na:2,busy:0,inv:0,will:9,wont:0,ignored:3,tel2:15,dur:[2,1,2,7],mod:{CARDIOLOGIA:{t:2,c:0},ECO_TRANSTORACICO:{t:8,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:15,a:12,c:0},honda:{t:0,a:0,c:0}}},
+  430:{total:73,answered:65,vm:2,na:5,busy:0,inv:1,will:49,wont:3,ignored:13,tel2:63,dur:[5,2,8,50],mod:{CARDIOLOGIA:{t:28,c:2},ECO_TRANSTORACICO:{t:40,c:1},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:26,a:24,c:2},ibague:{t:47,a:41,c:1},honda:{t:0,a:0,c:0}}},
+  501:{total:30,answered:28,vm:2,na:0,busy:0,inv:0,will:24,wont:0,ignored:4,tel2:28,dur:[1,1,3,23],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:16,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  502:{total:28,answered:27,vm:1,na:0,busy:0,inv:0,will:22,wont:0,ignored:5,tel2:28,dur:[0,1,7,19],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:14,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  503:{total:29,answered:24,vm:1,na:2,busy:1,inv:1,will:21,wont:1,ignored:2,tel2:26,dur:[0,0,2,22],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:15,c:1}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  504:{total:20,answered:18,vm:1,na:1,busy:0,inv:0,will:16,wont:0,ignored:2,tel2:19,dur:[0,0,5,13],mod:{CARDIOLOGIA:{t:12,c:0},ECOA_TRANSTORACICO:{t:3,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:5,a:4,c:0},honda:{t:0,a:0,c:0}}},
+  505:{total:39,answered:32,vm:1,na:6,busy:0,inv:0,will:23,wont:3,ignored:6,tel2:38,dur:[1,2,4,25],mod:{CARDIOLOGIA:{t:19,c:1},ECO_TRANSTORACICO:{t:12,c:1},MESA_BASCULANTE:{t:8,c:1}},sede:{girardot:{t:19,a:18,c:1},ibague:{t:8,a:6,c:1},honda:{t:0,a:0,c:0}}},
+  506:{total:24,answered:22,vm:1,na:0,busy:0,inv:1,will:17,wont:0,ignored:5,tel2:23,dur:[0,3,4,15],mod:{CAMINATA:{t:7,c:0},CARDIOLOGIA:{t:4,c:0},ECO_TRANSTORACICO:{t:9,c:0},MESA_BASCULANTE:{t:4,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:24,a:22,c:0},honda:{t:0,a:0,c:0}}},
+  507:{total:26,answered:22,vm:2,na:1,busy:1,inv:0,will:21,wont:0,ignored:1,tel2:24,dur:[1,0,2,19],mod:{CAMINATA:{t:8,c:0},CARDIOLOGIA:{t:8,c:0},ECO_TRANSTORACICO:{t:8,c:0},MESA_BASCULANTE:{t:2,c:0}},sede:{girardot:{t:16,a:13,c:0},ibague:{t:9,a:9,c:0},honda:{t:0,a:0,c:0}}},
+  508:{total:137,answered:117,vm:7,na:11,busy:2,inv:0,will:94,wont:2,ignored:21,tel2:124,dur:[3,3,6,105],mod:{CARDIOLOGIA:{t:77,c:1},ECO_TRANSTORACICO:{t:43,c:1},MESA_BASCULANTE:{t:3,c:0},PRUEBA_ESFUERZO:{t:14,c:0}},sede:{girardot:{t:77,a:62,c:1},ibague:{t:19,a:18,c:1},honda:{t:0,a:0,c:0}}},
+  509:{total:134,answered:111,vm:6,na:17,busy:0,inv:0,will:89,wont:8,ignored:14,tel2:119,dur:[1,1,10,99],mod:{CARDIOLOGIA:{t:62,c:3},ECO_ESTRES:{t:9,c:2},ECO_TRANSTORACICO:{t:45,c:2},PRUEBA_ESFUERZO:{t:18,c:1}},sede:{girardot:{t:82,a:69,c:3},ibague:{t:52,a:42,c:5},honda:{t:0,a:0,c:0}}},
+  510:{total:83,answered:72,vm:6,na:5,busy:0,inv:0,will:58,wont:2,ignored:12,tel2:73,dur:[2,3,4,63],mod:{CARDIOLOGIA:{t:33,c:2},ECO_TRANSTORACICO:{t:50,c:0}},sede:{girardot:{t:83,a:72,c:2},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  511:{total:90,answered:72,vm:7,na:9,busy:0,inv:2,will:58,wont:0,ignored:14,tel2:78,dur:[6,2,3,61],mod:{CARDIOLOGIA:{t:41,c:0},ECO_DE_ESTRES:{t:6,c:0},ECO_TRANSTORACICO:{t:43,c:0}},sede:{girardot:{t:84,a:67,c:0},ibague:{t:6,a:5,c:0},honda:{t:0,a:0,c:0}}},
+  512:{total:49,answered:40,vm:2,na:6,busy:0,inv:0,will:33,wont:1,ignored:6,tel2:41,dur:[2,1,3,34],mod:{CAMINATA:{t:6,c:0},CARDIOLOGIA:{t:12,c:0},ECO_ESTRES:{t:8,c:0},ECO_TRANSTORACICO:{t:20,c:0},MESA_BASCULANTE:{t:3,c:1}},sede:{girardot:{t:16,a:13,c:0},ibague:{t:26,a:22,c:1},honda:{t:0,a:0,c:0}}},
+  513:{total:67,answered:54,vm:5,na:7,busy:0,inv:1,will:42,wont:3,ignored:9,tel2:60,dur:[2,2,2,48],mod:{CARDIOLOGIA:{t:26,c:1},ECO_DE_ESTRES:{t:7,c:1},ECO_TRANSTORACICO:{t:34,c:1}},sede:{girardot:{t:28,a:22,c:1},ibague:{t:13,a:11,c:2},honda:{t:26,a:21,c:0}}},
+  514:{total:48,answered:40,vm:3,na:5,busy:0,inv:0,will:35,wont:1,ignored:4,tel2:47,dur:[1,1,7,31],mod:{CARDIOLOGIA:{t:28,c:1},ECO_ESTRESS:{t:7,c:0},ECO_TRANSTORACICO:{t:6,c:0},MESA_BASCULANTE:{t:3,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:29,a:26,c:0},ibague:{t:19,a:14,c:1},honda:{t:0,a:0,c:0}}},
+  515:{total:34,answered:28,vm:4,na:2,busy:0,inv:0,will:23,wont:1,ignored:4,tel2:31,dur:[1,1,4,22],mod:{CAMINATA:{t:2,c:0},CARDIOLOGIA:{t:11,c:0},ECO_TRANSTORACICO:{t:16,c:1},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:5,a:3,c:0},honda:{t:27,a:24,c:1}}},
+  519:{total:85,answered:77,vm:3,na:5,busy:0,inv:0,will:58,wont:4,ignored:15,tel2:79,dur:[4,0,17,56],mod:{CAMINATA:{t:11,c:0},CARDIOLOGIA:{t:30,c:2},ECO_DE_ESTRES:{t:7,c:1},ECO_TRANSTORACICO:{t:31,c:1},MESA_BASCULANTE:{t:5,c:0},PRUEBA_ESFUERZO:{t:1,c:0}},sede:{girardot:{t:34,a:31,c:1},ibague:{t:16,a:15,c:0},honda:{t:26,a:22,c:3}}},
+  520:{total:75,answered:66,vm:2,na:7,busy:0,inv:0,will:55,wont:2,ignored:9,tel2:62,dur:[2,0,6,58],mod:{CARDIOLOGIA:{t:31,c:1},ECO_ESTRES:{t:13,c:0},ECO_TRANSTORACICO:{t:26,c:0},MESA_BASCULANTE:{t:5,c:1}},sede:{girardot:{t:30,a:26,c:1},ibague:{t:25,a:23,c:1},honda:{t:20,a:17,c:0}}},
+  521:{total:96,answered:79,vm:6,na:10,busy:0,inv:1,will:61,wont:4,ignored:14,tel2:90,dur:[4,1,15,59],mod:{CAMINATA:{t:8,c:0},CARDIOLOGIA:{t:42,c:2},ECO_DE_ESTRES:{t:6,c:1},ECO_TRANSESOFAGICO:{t:7,c:0},ECO_TRANSTORACICO:{t:33,c:1}},sede:{girardot:{t:33,a:28,c:1},ibague:{t:14,a:10,c:1},honda:{t:20,a:14,c:1}}},
+  522:{total:32,answered:28,vm:2,na:2,busy:0,inv:0,will:25,wont:0,ignored:3,tel2:27,dur:[0,1,3,24],mod:{CAMINATA:{t:7,c:0},ECO_TRANSTORACICO:{t:18,c:0},MESA_BASCULANTE:{t:3,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:32,a:28,c:0},honda:{t:0,a:0,c:0}}},
+  523:{total:67,answered:54,vm:3,na:10,busy:0,inv:0,will:42,wont:3,ignored:9,tel2:59,dur:[2,3,7,42],mod:{CARDIOLOGIA:{t:32,c:3},ECO_DE_ESTRES:{t:6,c:0},ECO_TRANSESOFAGICO:{t:7,c:0},ECO_TRANSTORACICO:{t:22,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:67,a:54,c:3},honda:{t:0,a:0,c:0}}},
+  524:{total:31,answered:29,vm:0,na:1,busy:0,inv:1,will:21,wont:1,ignored:7,tel2:28,dur:[1,1,5,22],mod:{CARDIOLOGIA:{t:18,c:0},ECO_TRANSTORACICO:{t:13,c:1}},sede:{girardot:{t:31,a:29,c:1},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  525:{total:25,answered:25,vm:0,na:0,busy:0,inv:0,will:18,wont:3,ignored:4,tel2:23,dur:[0,3,3,19],mod:{CARDIOLOGIA:{t:15,c:2},ECO_DE_ESTRESS:{t:4,c:1},MESA_BASCULANTE:{t:2,c:0},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:7,a:7,c:1},ibague:{t:18,a:18,c:2},honda:{t:0,a:0,c:0}}},
+  526:{total:81,answered:67,vm:7,na:7,busy:0,inv:0,will:53,wont:1,ignored:13,tel2:74,dur:[2,2,9,54],mod:{CARDIOLOGIA:{t:33,c:0},ECO_DE_ESTRES:{t:22,c:1},ECO_TRANSTORACICO:{t:26,c:0}},sede:{girardot:{t:52,a:44,c:1},ibague:{t:20,a:19,c:0},honda:{t:0,a:0,c:0}}},
+  527:{total:17,answered:17,vm:0,na:0,busy:0,inv:0,will:14,wont:0,ignored:3,tel2:16,dur:[0,1,3,13],mod:{CARDIOLOGIA:{t:4,c:0},ECO_TRANSTORACICO:{t:8,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:17,a:17,c:0},honda:{t:0,a:0,c:0}}},
+  528:{total:78,answered:64,vm:5,na:8,busy:1,inv:0,will:51,wont:1,ignored:12,tel2:74,dur:[3,1,3,57],mod:{CARDIOLOGIA:{t:42,c:1},ECO_TRANSTORACICO:{t:31,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:29,a:23,c:1},ibague:{t:5,a:4,c:0},honda:{t:0,a:0,c:0}}},
+  529:{total:81,answered:66,vm:6,na:9,busy:0,inv:0,will:51,wont:3,ignored:12,tel2:75,dur:[1,1,12,52],mod:{CARDIOLOGIA:{t:28,c:0},ECO_DE_ESTRESS:{t:10,c:0},ECO_TRANSTORACICO:{t:36,c:2},MESA_BASCULANTE:{t:3,c:1},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:58,a:47,c:1},ibague:{t:23,a:19,c:2},honda:{t:0,a:0,c:0}}},
+  530:{total:38,answered:32,vm:1,na:5,busy:0,inv:0,will:27,wont:2,ignored:3,tel2:28,dur:[1,4,2,25],mod:{CARDIOLOGIA:{t:25,c:1},ECO_TRANSTORACICO:{t:13,c:1}},sede:{girardot:{t:38,a:32,c:2},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  602:{total:67,answered:58,vm:5,na:3,busy:0,inv:1,will:47,wont:1,ignored:10,tel2:61,dur:[2,3,4,49],mod:{CARDIOLOGIA:{t:31,c:1},ECO_DE_ESTRES:{t:7,c:0},ECO_TRANSTORACICO:{t:17,c:0},MESA_BASCULANTE:{t:7,c:0},PRUEBA_ESFUERZO:{t:5,c:0}},sede:{girardot:{t:30,a:26,c:1},ibague:{t:25,a:21,c:0},honda:{t:0,a:0,c:0}}},
+  603:{total:53,answered:40,vm:5,na:8,busy:0,inv:0,will:30,wont:1,ignored:9,tel2:52,dur:[3,0,4,33],mod:{CARDIOLOGIA:{t:21,c:0},ECO_DE_ESTRES:{t:7,c:0},ECO_TRANSTORACICO:{t:25,c:1}},sede:{girardot:{t:31,a:28,c:0},ibague:{t:22,a:12,c:1},honda:{t:0,a:0,c:0}}},
+  604:{total:92,answered:78,vm:5,na:7,busy:2,inv:0,will:64,wont:1,ignored:13,tel2:85,dur:[2,3,2,71],mod:{CARDIOLOGIA:{t:33,c:0},ECO_DE_ESTRES:{t:7,c:0},ECO_TRANSESOFAGICO:{t:8,c:0},ECO_TRANSTORACICO:{t:40,c:1},PRUEBA_ESFUERZO:{t:4,c:0}},sede:{girardot:{t:71,a:60,c:0},ibague:{t:21,a:18,c:1},honda:{t:0,a:0,c:0}}},
+  605:{total:22,answered:18,vm:0,na:4,busy:0,inv:0,will:12,wont:4,ignored:2,tel2:20,dur:[2,0,0,16],mod:{CARDIOLOGIA:{t:12,c:2},ECO_TRANSTORACICO:{t:8,c:2},PRUEBA_ESFUERZO:{t:2,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:22,a:18,c:4},honda:{t:0,a:0,c:0}}},
+  606:{total:36,answered:33,vm:0,na:2,busy:0,inv:1,will:25,wont:1,ignored:7,tel2:34,dur:[2,3,4,24],mod:{CARDIOLOGIA:{t:22,c:1},ECO_TRANSTORACICO:{t:14,c:0}},sede:{girardot:{t:8,a:7,c:0},ibague:{t:28,a:26,c:1},honda:{t:0,a:0,c:0}}},
+  607:{total:14,answered:13,vm:1,na:0,busy:0,inv:0,will:11,wont:0,ignored:2,tel2:14,dur:[0,0,1,12],mod:{ECO_DE_ESTRES:{t:14,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:14,a:13,c:0},honda:{t:0,a:0,c:0}}},
+  608:{total:31,answered:26,vm:3,na:2,busy:0,inv:0,will:21,wont:0,ignored:5,tel2:28,dur:[2,1,3,20],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:17,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0}}},
+  609:{total:64,answered:49,vm:6,na:9,busy:0,inv:0,will:44,wont:2,ignored:3,tel2:61,dur:[1,1,5,42],mod:{CAMINATA:{t:5,c:0},CARDIOLOGIA:{t:25,c:1},ECO_DE_ESTRES:{t:7,c:0},ECO_TRANSTORACICO:{t:22,c:0},MESA_BASCULANTE:{t:5,c:1}},sede:{girardot:{t:15,a:12,c:0},ibague:{t:10,a:7,c:1},honda:{t:0,a:0,c:0}}},
+  610:{total:121,answered:100,vm:7,na:13,busy:0,inv:0,will:69,wont:4,ignored:27,tel2:115,dur:[9,2,5,84],mod:{CARDIOLOGIA:{t:62,c:3},ECO_DE_ESTRES:{t:6,c:0},ECO_TRANSESOFAGICO:{t:3,c:0},ECO_TRANSTORACICO:{t:47,c:0},PRUEBA_ESFUERZO:{t:3,c:1}},sede:{girardot:{t:15,a:14,c:0},ibague:{t:49,a:39,c:2},honda:{t:27,a:21,c:1}}},
 };
 
-const DAY_LABELS = {1:'1 may',2:'2 may',3:'3 may',4:'4 may',5:'5 may',6:'6 may',7:'7 may',8:'8 may',9:'9 may',10:'10 may',11:'11 may',12:'12 may',13:'13 may',14:'14 may',15:'15 may',19:'19 may',20:'20 may',21:'21 may',22:'22 may',23:'23 may',24:'24 may',25:'25 may',26:'26 may',27:'27 may',28:'28 may',29:'29 may',30:'30 may'};
+const DAY_LABELS = {401:'1 abr',404:'4 abr',407:'7 abr',408:'8 abr',409:'9 abr',410:'10 abr',413:'13 abr',414:'14 abr',415:'15 abr',416:'16 abr',417:'17 abr',418:'18 abr',419:'19 abr',420:'20 abr',421:'21 abr',422:'22 abr',423:'23 abr',424:'24 abr',425:'25 abr',426:'26 abr',427:'27 abr',428:'28 abr',429:'29 abr',430:'30 abr',501:'1 may',502:'2 may',503:'3 may',504:'4 may',505:'5 may',506:'6 may',507:'7 may',508:'8 may',509:'9 may',510:'10 may',511:'11 may',512:'12 may',513:'13 may',514:'14 may',515:'15 may',519:'19 may',520:'20 may',521:'21 may',522:'22 may',523:'23 may',524:'24 may',525:'25 may',526:'26 may',527:'27 may',528:'28 may',529:'29 may',530:'30 may',602:'2 jun',603:'3 jun',604:'4 jun',605:'5 jun',606:'6 jun',607:'7 jun',608:'8 jun',609:'9 jun',610:'10 jun'};
 const MOD_LABELS = {CARDIOLOGIA:'Consulta Cardiología',ECO_TRANSTORACICO:'Eco Transtorácico',ECO_ESTRES:'Eco Estrés',MESA_BASCULANTE:'Mesa Basculante'};
 
 function getRange(){
   const p = document.getElementById('periodo-sel').value;
-  const allDays = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,19,20,21,22,23,24,25,26,27,28,29,30];
-  if(p==='todos') return allDays;
+  const MES = {abr:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430],may:[501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530],jun:[602,603,604,605,606,607,608,609,610],todos:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530,602,603,604,605,606,607,608,609,610]};
+;
+  if(p==='abr'||p==='may'||p==='jun') return MES[p];
+  if(p==='todos') return MES.todos;
   if(p==='fecha'){const d=+document.getElementById('fecha-sel').value; return [d];}
   if(p==='rango'){
     const d1=+document.getElementById('rango-desde').value;
     const d2=+document.getElementById('rango-hasta').value;
-    return allDays.filter(d=>d>=Math.min(d1,d2)&&d<=Math.max(d1,d2));
+    return MES.todos.filter(d=>d>=Math.min(d1,d2)&&d<=Math.max(d1,d2));
   }
-  return allDays;
+  return MES.todos;
 }
+
 
 
 function agg(days){

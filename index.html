@@ -63,7 +63,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
 .cd{font-size:12px;color:var(--text2);margin-bottom:14px;line-height:1.5;}
 .cd strong{color:var(--text);}
 /* CUPOS */
-.cupos-g{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.cupos-g{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;} #cupos-grid{grid-template-columns:repeat(4,1fr)!important;}
 @media(max-width:600px){.cupos-g{grid-template-columns:repeat(2,1fr);}}
 .cp{background:#f0f6e8;border:1px solid #c4dd8a;border-radius:var(--radius);padding:10px;text-align:center;}
 .cp-l{font-size:10px;color:#3a5430;line-height:1.4;margin-bottom:3px;}
@@ -369,14 +369,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
   <div class="card ra">
     <div class="ch"><span class="ct">Cupos liberados por especialidad</span><span class="pill-r" id="badge-cupos">14 cupos libres</span></div>
     <div class="cd" id="cupos-desc"><strong>14 pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.</div>
-    <div class="cupos-g" id="cupos-grid">
-      <div class="cp"><div class="cp-l">Consulta Cardiología</div><div class="cp-n" id="c-cardio">1</div><div class="cp-s">cupos</div></div>
-      <div class="cp"><div class="cp-l">Eco Transtorácico</div><div class="cp-n" id="c-eco">0</div><div class="cp-s">cupos</div></div>
-      <div class="cp"><div class="cp-l">Eco Estrés</div><div class="cp-n" id="c-holter">0</div><div class="cp-s">cupos</div></div>
-      <div class="cp"><div class="cp-l">Mesa Basculante</div><div class="cp-n" id="c-esfuerzo">1</div><div class="cp-s">cupos</div></div>
-    </div>
-    <div class="cupos-g" style="margin-top:8px;">
-      <div class="cp"><div class="cp-l">Electrofisiología</div><div class="cp-n" id="c-electro">0</div><div class="cp-s">cupos</div></div>
+    <div class="cupos-g" id="cupos-grid" style="grid-template-columns:repeat(4,1fr);"></div><div class="cp-n" id="c-electro">0</div><div class="cp-s">cupos</div></div>
       <div class="cp"><div class="cp-l">Hemodinámica</div><div class="cp-n" id="c-hemo">0</div><div class="cp-s">cupos</div></div>
       <div class="cp"><div class="cp-l">Otro</div><div class="cp-n" id="c-rehab">0</div><div class="cp-s">cupos</div></div>
       <div class="cp-tot"><div class="cp-tot-l">Total recuperable</div><div class="cp-tot-n" id="c-tot">14</div><div class="cp-tot-l">cupos totales</div></div>
@@ -710,14 +703,16 @@ function applyFilter(){
   // Cupos
   document.getElementById('badge-cupos').textContent = fmt(v.wont)+' cupos libres';
   document.getElementById('cupos-desc').innerHTML = '<strong>'+fmt(v.wont)+' pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.';
-  document.getElementById('c-cardio').textContent = v.mod.CARDIOLOGIA?.c||0;
-  document.getElementById('c-eco').textContent = v.mod.ECO_TRANSTORACICO?.c||0;
-  document.getElementById('c-holter').textContent = v.mod.ECO_ESTRES?.c||0;
-  document.getElementById('c-esfuerzo').textContent = v.mod.MESA_BASCULANTE?.c||0;
-  document.getElementById('c-electro').textContent = 0;
-  document.getElementById('c-hemo').textContent = 0;
-  document.getElementById('c-rehab').textContent = 0;
-  document.getElementById('c-tot').textContent = fmt(v.wont);
+  // Build cupos grid dynamically
+  const cuposGrid = document.getElementById('cupos-grid');
+  const MOD_ORDER = ['CARDIOLOGIA','ECO_TRANSTORACICO','ECO_ESTRES','PRUEBA_ESFUERZO','MESA_BASCULANTE','ECO_TRANSESOFAGICO','HOLTER','ELECTROCARDIOGRAFIA'];
+  const allMods = [...new Set([...MOD_ORDER, ...Object.keys(v.mod)])].filter(m=>v.mod[m]&&v.mod[m].t>0);
+  cuposGrid.innerHTML = allMods.map(m=>{
+    const c = v.mod[m]?.c||0;
+    const lbl = MOD_LABELS[m]||m;
+    return '<div class="cp"><div class="cp-l">'+lbl+'</div><div class="cp-n">'+c+'</div><div class="cp-s">cupos</div></div>';
+  }).join('') +
+  '<div class="cp-tot"><div class="cp-tot-l">Total recuperable</div><div class="cp-tot-n" id="c-tot">'+fmt(v.wont)+'</div><div class="cp-tot-l">cupos totales</div></div>';
 
   // Encuesta legend
   const nc = v.total - v.answered;

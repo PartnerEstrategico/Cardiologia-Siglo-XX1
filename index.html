@@ -381,7 +381,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="cp"><div class="cp-l">Otro</div><div class="cp-n" id="c-rehab">0</div><div class="cp-s">cupos</div></div>
       <div class="cp-tot"><div class="cp-tot-l">Total recuperable</div><div class="cp-tot-n" id="c-tot">14</div><div class="cp-tot-l">cupos totales</div></div>
     </div>
-    <div class="aa">⚠ <strong>Consulta Cardiología y Mesa Basculante</strong> registraron 1 cancelación cada una. Tasa general muy baja: 3.5% sobre encuestados.</div>
+    <div class="aa" id="cupos-alert">⚠ <strong>Consulta Cardiología y Mesa Basculante</strong> registraron 1 cancelación cada una. Tasa general muy baja: 3.5% sobre encuestados.</div>
     <p class="note">* Detalle de agenda disponible en el archivo DETALLE de cada informe diario</p>
   </div>
 
@@ -416,7 +416,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div><div class="dv" id="dur3">6</div><div class="dbw"><div class="db" style="height:9%;background:var(--dark);"></div></div><div class="dl">31–45 seg</div><div class="dp" id="durp3">9.1%</div></div>
       <div><div class="dv" id="dur4">58</div><div class="dbw"><div class="db" style="height:100%;background:var(--dark);"></div></div><div class="dl">>45 seg</div><div class="dp" id="durp4">87.9%</div></div>
     </div>
-    <div class="ai">💡 El <strong>85.7%</strong> de llamadas contestan en más de 30 segundos, indicando buena calidad de interacción con el agente.</div>
+    <div class="ai" id="dur-alert">💡 El <strong>85.7%</strong> de llamadas contestan en más de 30 segundos, indicando buena calidad de interacción con el Bot.</div>
   </div>
 </div>
 
@@ -447,7 +447,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <thead><tr><th>Día</th><th>Total</th><th>Contactadas</th><th>Contact ratio</th><th>Asistirá</th><th>Cancela</th><th>Tasa cancel.</th></tr></thead>
       <tbody id="trend-tbody"></tbody>
     </table>
-    <div class="aa" style="margin-top:10px;">⚠ La tasa de cancelación muestra variabilidad entre días. Miércoles y viernes presentan los picos más altos.</div>
+    <div class="aa" id="trend-alert" style="margin-top:10px;">⚠ La tasa de cancelación muestra variabilidad entre días.</div>
   </div>
 </div>
 
@@ -467,7 +467,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
         <div class="si"><span class="sr">3</span><span class="sn">Honda</span><span class="sc" id="sede-3">0</span><span class="bdg b-g" id="sede-3p">0.0%</span></div>
       </div>
       <div class="sep"><span>Total</span><span style="font-weight:600;" id="sede-total">14</span></div>
-      <div class="at">💡 Honda: 0 cancelaciones. Girardot e Ibagué con 1 cancelación cada una — tasas dentro del rango normal.</div>
+      <div class="at" id="sede-cancel-alert">💡 Datos de cancelación por sede actualizados.</div>
     </div>
   </div>
   <div class="card">
@@ -476,7 +476,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <thead><tr><th>Especialidad</th><th>Total citas</th><th>Cancelan</th><th>Tasa</th><th>Riesgo</th></tr></thead>
       <tbody id="mod-tbody"></tbody>
     </table>
-    <div class="aa" style="margin-top:10px;">💡 Tasas de cancelación controladas en todas las especialidades. Eco Transtorácico y Eco Estrés sin cancelaciones en este período.</div>
+    <div class="aa" id="mod-cancel-alert" style="margin-top:10px;">💡 Tasas de cancelación por especialidad actualizadas.</div>
   </div>
   <div class="card">
     <p class="lbl">Contact ratio por sede</p>
@@ -484,7 +484,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <thead><tr><th>Centro</th><th>Total citas</th><th>Contestaron</th><th>Contact ratio</th><th>Cancela</th></tr></thead>
       <tbody id="sede-tbody"></tbody>
     </table>
-    <div class="ai" style="margin-top:10px;">💡 Honda tiene el contact ratio más bajo (85%). Girardot e Ibagué superan el 88%. Excelente desempeño general.</div>
+    <div class="ai" id="sede-ratio-alert" style="margin-top:10px;">💡 Contact ratio por sede actualizado.</div>
   </div>
 </div>
 
@@ -507,14 +507,14 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="kpi-s"><span class="kpi-p">100%</span> todos tienen registrado</div>
     </div>
   </div>
-  <div class="aa" style="margin-bottom:14px;">⚠ <strong>Oportunidad:</strong> El 82.7% de pacientes tienen número alterno registrado — excelente cobertura. Solo 13 pacientes no tienen segundo número.</div>
+  <div class="aa" id="tel2-alert" style="margin-bottom:14px;">⚠ Cobertura de teléfono alterno actualizada.</div>
   <div class="two">
     <div class="card">
       <p class="lbl">Cobertura telefónica</p>
       <div class="br"><span class="bl">Teléfono principal</span><div class="bt"><div class="bf" style="width:100%;background:var(--dark);"></div></div><span class="bv" id="f-bv1">75 · 100%</span></div>
       <div class="br"><span class="bl">Sin número alterno</span><div class="bt"><div class="bf" id="f-bar-sin" style="background:var(--amber);"></div></div><span class="bv" id="f-bv2">13 · 17.3%</span></div>
       <div class="br"><span class="bl">Con número alterno</span><div class="bt"><div class="bf" id="f-bar-con" style="background:var(--blue);"></div></div><span class="bv" id="f-bv3">62 · 82.7%</span></div>
-      <div class="ai" style="margin-top:10px;">💡 Incrementar el registro de números alternos puede llevar el contact ratio por encima del 75%.</div>
+      <div class="ai" id="tel2-tip" style="margin-top:10px;">💡 Incrementar el registro de números alternos puede mejorar el contact ratio.</div>
     </div>
     <div class="card">
       <p class="lbl">No contactados — oportunidad de mejora</p>
@@ -522,7 +522,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="br"><span class="bl">Buzón de voz</span><div class="bt"><div class="bf" id="f-nc2" style="background:#a78bfa;"></div></div><span class="bv" id="f-nv2">2 · 2.7%</span></div>
       <div class="br"><span class="bl">Línea ocupada</span><div class="bt"><div class="bf" id="f-nc3" style="background:var(--amber);"></div></div><span class="bv" id="f-nv3">0 · 0.0%</span></div>
       <div class="br"><span class="bl">Número inválido</span><div class="bt"><div class="bf" id="f-nc4" style="background:var(--red);"></div></div><span class="bv" id="f-nv4">0 · 0.0%</span></div>
-      <div class="aa" style="margin-top:10px;">9 pacientes no fueron alcanzados (7 no contestaron, 2 buzón). Con número alterno se pueden reintentar estas llamadas.</div>
+      <div class="aa" id="nocontact-alert" style="margin-top:10px;">9 pacientes no fueron alcanzados.</div>
     </div>
   </div>
 </div>
@@ -806,6 +806,78 @@ function applyFilter(){
   document.getElementById('f-nv3').textContent = fmt(v.busy)+' · '+pct(v.busy,v.total);
   document.getElementById('f-nc4').style.width = pct(v.inv,v.total);
   document.getElementById('f-nv4').textContent = fmt(v.inv)+' · '+pct(v.inv,v.total);
+
+
+  // ======= ALERTAS DINÁMICAS =======
+  (function(v, days){
+    // -- Cupos alert --
+    var mSorted = Object.keys(v.mod).sort(function(a,b){return v.mod[b].c-v.mod[a].c;}).filter(function(m){return v.mod[m].c>0;});
+    var cRate = (v.will+v.wont)>0 ? (v.wont/(v.will+v.wont)*100).toFixed(1) : 0;
+    var cuposEl = document.getElementById('cupos-alert');
+    if(v.wont===0){
+      cuposEl.className='at'; cuposEl.innerHTML='✅ Sin cancelaciones en el período seleccionado.';
+    } else {
+      var topMods = mSorted.slice(0,2).map(function(m){return MOD_LABELS[m]||m;}).join(' y ');
+      cuposEl.className='aa'; cuposEl.innerHTML='⚠ <strong>'+topMods+'</strong> concentran el mayor número de cancelaciones. Tasa: '+cRate+'% sobre encuestados.';
+    }
+    // -- Duración alert --
+    var longCalls = v.dur[2]+v.dur[3];
+    var longPct = v.answered>0 ? (longCalls/v.answered*100).toFixed(1) : 0;
+    document.getElementById('dur-alert').innerHTML='💡 El <strong>'+longPct+'%</strong> de llamadas del Bot duran más de 30 segundos, indicando buena calidad de interacción.';
+    // -- Tendencia alert --
+    var trendEl = document.getElementById('trend-alert');
+    if(days.length>1){
+      var rates = days.map(function(d){var s=DATA[d].will+DATA[d].wont; return s?(DATA[d].wont/s*100):0;});
+      var maxR = Math.max.apply(null,rates).toFixed(1);
+      var minR = Math.min.apply(null,rates).toFixed(1);
+      var trendDir = rates[rates.length-1]>rates[0] ? 'al alza 📈' : 'a la baja 📉';
+      trendEl.innerHTML='⚠ Tasa de cancelación: mín '+minR+'% · máx '+maxR+'% en el período. Tendencia '+trendDir+'.';
+      trendEl.style.display='';
+    } else {
+      trendEl.style.display='none';
+    }
+    // -- Sede cancel alert --
+    var gir=v.sede.girardot, iba=v.sede.ibague, hon=v.sede.honda;
+    var sedeArr = [{n:'Girardot',d:gir},{n:'Ibagué',d:iba},{n:'Honda',d:hon}].sort(function(a,b){return b.d.c-a.d.c;});
+    var sedeCancelEl = document.getElementById('sede-cancel-alert');
+    if(v.wont===0){
+      sedeCancelEl.className='at'; sedeCancelEl.innerHTML='✅ Ninguna sede registra cancelaciones en este período.';
+    } else {
+      var topS=sedeArr[0], botS=sedeArr[sedeArr.length-1];
+      sedeCancelEl.className=(topS.d.t>0&&topS.d.c/topS.d.t>0.08)?'aa':'at';
+      sedeCancelEl.innerHTML='⚠ <strong>'+topS.n+'</strong> concentra más cancelaciones ('+topS.d.c+'). '+botS.n+': '+botS.d.c+' cancelaciones.';
+    }
+    // -- Especialidad cancel alert --
+    var modCancelEl = document.getElementById('mod-cancel-alert');
+    if(mSorted.length===0){
+      modCancelEl.className='ai'; modCancelEl.innerHTML='✅ Sin cancelaciones en ninguna especialidad para este período.';
+    } else {
+      var topM=mSorted[0]; var topR=v.mod[topM].t>0?(v.mod[topM].c/v.mod[topM].t*100).toFixed(1):0;
+      var zeroM=Object.keys(v.mod).filter(function(m){return v.mod[m].c===0&&v.mod[m].t>0;}).map(function(m){return MOD_LABELS[m]||m;});
+      modCancelEl.className=+topR>=8?'aa':'at';
+      modCancelEl.innerHTML='⚠ <strong>'+(MOD_LABELS[topM]||topM)+'</strong> lidera cancelaciones ('+topR+'%). '+(zeroM.length>0?zeroM.join(', ')+' sin cancelaciones.':'');
+    }
+    // -- Sede contact ratio alert --
+    var sedeRatioEl = document.getElementById('sede-ratio-alert');
+    var sedeByR = [{n:'Girardot',t:gir.t,a:gir.a},{n:'Ibagué',t:iba.t,a:iba.a},{n:'Honda',t:hon.t,a:hon.a}].filter(function(s){return s.t>0;}).sort(function(a,b){return (b.a/b.t)-(a.a/a.t);});
+    if(sedeByR.length>0){
+      var best=sedeByR[0], worst=sedeByR[sedeByR.length-1];
+      sedeRatioEl.innerHTML='💡 <strong>'+best.n+'</strong> mejor contact ratio ('+(best.a/best.t*100).toFixed(1)+'%). <strong>'+worst.n+'</strong> más bajo ('+(worst.a/worst.t*100).toFixed(1)+'%).';
+    }
+    // -- Fuentes alerts --
+    var sinT = v.total - v.tel2;
+    var t2Pct = v.total>0?(v.tel2/v.total*100).toFixed(1):0;
+    var tel2El = document.getElementById('tel2-alert');
+    if(+t2Pct>=50){
+      tel2El.className='ai'; tel2El.innerHTML='✅ <strong>Oportunidad:</strong> El '+t2Pct+'% de pacientes tienen número alterno — buena cobertura. '+sinT+' sin segundo número.';
+    } else {
+      tel2El.className='aa'; tel2El.innerHTML='⚠ <strong>Oportunidad:</strong> Solo el '+t2Pct+'% tienen número alterno. '+sinT+' pacientes sin segundo número impiden reintentar.';
+    }
+    var noC = v.total - v.answered;
+    document.getElementById('nocontact-alert').innerHTML=fmt(noC)+' pacientes no fueron alcanzados ('+fmt(v.na)+' no contestaron, '+fmt(v.vm)+' buzón'+(v.busy>0?', '+fmt(v.busy)+' ocupado':'')+').'+(sinT>0?' Con número alterno se podrían reintentar hasta '+fmt(Math.min(sinT,noC))+' llamadas.':'');
+    var projR = v.total>0?Math.min(99,((v.answered+Math.min(sinT,noC))/v.total*100)).toFixed(1):0;
+    document.getElementById('tel2-tip').innerHTML='💡 Con más números alternos, el contact ratio podría alcanzar ~'+projR+'% (actual: '+(v.answered/v.total*100).toFixed(1)+'%).';
+  })(v, days);
 
   initCharts(v, days);
 }

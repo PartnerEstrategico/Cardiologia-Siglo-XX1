@@ -135,7 +135,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="hdr-sub">Gestión de confirmación de citas</div>
     </div>
   </div>
-  <div class="hdr-right" id="hdr-meta">Junio 2026 · 500 registros</div>
+  <div class="hdr-right" id="hdr-meta">10 jun 2026 · 121 registros</div>
 </div>
 
 <!-- TABS -->
@@ -150,11 +150,11 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
 <div class="filterbar">
   <label>Período:</label>
       <select class="fsel" id="periodo-sel" onchange="onPeriodo()">
-    <option value="jun" selected>Junio 2026 (9 días)</option>
+    <option value="jun">Junio 2026 (9 días)</option>
     <option value="may">Mayo 2026 (27 días)</option>
     <option value="abr">Abril 2026 (24 días)</option>
     <option value="todos">Todos los meses</option>
-    <option value="fecha">Fecha específica</option>
+    <option value="fecha" selected>Fecha específica</option>
     <option value="rango">Rango personalizado</option>
   </select>
 
@@ -353,22 +353,22 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
     </select>
   </div>
 
-  <span class="pill" id="pill-citas">500 citas</span>
+  <span class="pill" id="pill-citas">121 citas</span>
 </div>
 
 <!-- ===== RESUMEN ===== -->
 <div class="page active" id="p-resumen">
   <p class="lbl">Indicadores clave del período</p>
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-l">Total gestionadas</div><div class="kpi-n" id="k-total">500</div><div class="kpi-s" id="k-total-s">~56 citas/día promedio</div></div>
-    <div class="kpi r"><div class="kpi-l">Contactadas</div><div class="kpi-n" id="k-contact">415</div><div class="kpi-s"><span class="kpi-p" id="k-contact-p">83.0%</span> contact ratio</div></div>
-    <div class="kpi g"><div class="kpi-l">Confirman asistencia</div><div class="kpi-n" id="k-asiste">323</div><div class="kpi-s"><span class="kpi-p" id="k-asiste-p">95.8%</span> de encuestados</div></div>
-    <div class="kpi d"><div class="kpi-l">Cancelaciones</div><div class="kpi-n" id="k-cancel">14</div><div class="kpi-s"><span class="kpi-p" id="k-cancel-p">4.2%</span> cupos liberados</div></div>
+    <div class="kpi"><div class="kpi-l">Total gestionadas</div><div class="kpi-n" id="k-total">121</div><div class="kpi-s" id="k-total-s">1 día seleccionado</div></div>
+    <div class="kpi r"><div class="kpi-l">Contactadas</div><div class="kpi-n" id="k-contact">100</div><div class="kpi-s"><span class="kpi-p" id="k-contact-p">82.6%</span> contact ratio</div></div>
+    <div class="kpi g"><div class="kpi-l">Confirman asistencia</div><div class="kpi-n" id="k-asiste">69</div><div class="kpi-s"><span class="kpi-p" id="k-asiste-p">94.5%</span> de encuestados</div></div>
+    <div class="kpi d"><div class="kpi-l">Cancelaciones</div><div class="kpi-n" id="k-cancel">4</div><div class="kpi-s"><span class="kpi-p" id="k-cancel-p">5.5%</span> cupos liberados</div></div>
   </div>
 
   <div class="card ra">
-    <div class="ch"><span class="ct">Cupos liberados por especialidad</span><span class="pill-r" id="badge-cupos">14 cupos libres</span></div>
-    <div class="cd" id="cupos-desc"><strong>14 pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.</div>
+    <div class="ch"><span class="ct">Cupos liberados por especialidad</span><span class="pill-r" id="badge-cupos">4 cupos libres</span></div>
+    <div class="cd" id="cupos-desc"><strong>4 pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.</div>
     <div id="cupos-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;"></div>
     <div class="aa" id="cupos-alert">⚠ <strong>Consulta Cardiología y Mesa Basculante</strong> registraron 1 cancelación cada una. Tasa general muy baja: 3.5% sobre encuestados.</div>
     <p class="note">* Detalle de agenda disponible en el archivo DETALLE de cada informe diario</p>
@@ -446,7 +446,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
     <div class="card">
       <p class="lbl">Especialidades con más cancelaciones</p>
       <div class="sl" id="mod-list"></div>
-      <div class="sep"><span>Total cancelaciones</span><span id="mod-total" style="font-weight:600;">14 · 2.8% base</span></div>
+      <div class="sep"><span>Total cancelaciones</span><span id="mod-total" style="font-weight:600;">4 · 3.3% base</span></div>
     </div>
     <div class="card">
       <p class="lbl">Cancelaciones por sede</p>
@@ -455,7 +455,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
         <div class="si"><span class="sr">2</span><span class="sn">Ibagué</span><span class="sc" id="sede-2">1</span><span class="bdg b-b" id="sede-2p">4.0%</span></div>
         <div class="si"><span class="sr">3</span><span class="sn">Honda</span><span class="sc" id="sede-3">0</span><span class="bdg b-g" id="sede-3p">0.0%</span></div>
       </div>
-      <div class="sep"><span>Total</span><span style="font-weight:600;" id="sede-total">14</span></div>
+      <div class="sep"><span>Total</span><span style="font-weight:600;" id="sede-total">4</span></div>
       <div class="at" id="sede-cancel-alert">💡 Datos de cancelación por sede actualizados.</div>
     </div>
   </div>

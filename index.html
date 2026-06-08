@@ -369,11 +369,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
   <div class="card ra">
     <div class="ch"><span class="ct">Cupos liberados por especialidad</span><span class="pill-r" id="badge-cupos">14 cupos libres</span></div>
     <div class="cd" id="cupos-desc"><strong>14 pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.</div>
-    <div class="cupos-g" id="cupos-grid" style="grid-template-columns:repeat(4,1fr);"></div><div class="cp-n" id="c-electro">0</div><div class="cp-s">cupos</div></div>
-      <div class="cp"><div class="cp-l">Hemodinámica</div><div class="cp-n" id="c-hemo">0</div><div class="cp-s">cupos</div></div>
-      <div class="cp"><div class="cp-l">Otro</div><div class="cp-n" id="c-rehab">0</div><div class="cp-s">cupos</div></div>
-      <div class="cp-tot"><div class="cp-tot-l">Total recuperable</div><div class="cp-tot-n" id="c-tot">14</div><div class="cp-tot-l">cupos totales</div></div>
-    </div>
+    <div id="cupos-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;"></div>
     <div class="aa" id="cupos-alert">⚠ <strong>Consulta Cardiología y Mesa Basculante</strong> registraron 1 cancelación cada una. Tasa general muy baja: 3.5% sobre encuestados.</div>
     <p class="note">* Detalle de agenda disponible en el archivo DETALLE de cada informe diario</p>
   </div>
@@ -706,8 +702,12 @@ function applyFilter(){
   // Build cupos grid dynamically
   const cuposGrid = document.getElementById('cupos-grid');
   const MOD_ORDER = ['CARDIOLOGIA','ECO_TRANSTORACICO','ECO_ESTRES','PRUEBA_ESFUERZO','MESA_BASCULANTE','ECO_TRANSESOFAGICO','HOLTER','ELECTROCARDIOGRAFIA'];
-  const allMods = [...new Set([...MOD_ORDER, ...Object.keys(v.mod)])].filter(m=>v.mod[m]&&v.mod[m].t>0);
-  cuposGrid.innerHTML = allMods.map(m=>{
+  const activeMods = [...new Set([...MOD_ORDER, ...Object.keys(v.mod)])].filter(m=>v.mod[m]&&v.mod[m].t>0);
+  // Calculate columns: fit mods + total card into rows of 4
+  const totalCards = activeMods.length + 1;
+  const cols = totalCards <= 4 ? totalCards : 4;
+  cuposGrid.style.gridTemplateColumns = 'repeat('+cols+',1fr)';
+  cuposGrid.innerHTML = activeMods.map(m=>{
     const c = v.mod[m]?.c||0;
     const lbl = MOD_LABELS[m]||m;
     return '<div class="cp"><div class="cp-l">'+lbl+'</div><div class="cp-n">'+c+'</div><div class="cp-s">cupos</div></div>';

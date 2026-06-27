@@ -135,7 +135,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="hdr-sub">Gestión de confirmación de citas</div>
     </div>
   </div>
-  <div class="hdr-right" id="hdr-meta">26 jun 2026 · 65 registros</div>
+  <div class="hdr-right" id="hdr-meta">30 jun 2026 · 142 registros</div>
 </div>
 
 <!-- TABS -->
@@ -150,7 +150,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
 <div class="filterbar">
   <label>Período:</label>
       <select class="fsel" id="periodo-sel" onchange="onPeriodo()">
-    <option value="jun">Junio 2026 (22 días)</option>
+    <option value="jun">Junio 2026 (25 días)</option>
     <option value="may">Mayo 2026 (27 días)</option>
     <option value="abr">Abril 2026 (24 días)</option>
     <option value="todos">Todos los meses</option>
@@ -233,7 +233,10 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="623">23 jun 2026</option>
       <option value="624">24 jun 2026</option>
       <option value="625">25 jun 2026</option>
-      <option value="626" selected>26 jun 2026</option>
+      <option value="626">26 jun 2026</option>
+      <option value="628">28 jun 2026</option>
+      <option value="629">29 jun 2026</option>
+      <option value="630" selected>30 jun 2026</option>
     </select>
   </div>
 
@@ -313,6 +316,9 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="624">24 jun 2026</option>
       <option value="625">25 jun 2026</option>
       <option value="626">26 jun 2026</option>
+      <option value="628">28 jun 2026</option>
+      <option value="629">29 jun 2026</option>
+      <option value="630">30 jun 2026</option>
     </select>
     <label>Hasta:</label>
     <select class="fsel" id="rango-hasta" onchange="applyFilter()">
@@ -388,26 +394,29 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="623">23 jun 2026</option>
       <option value="624">24 jun 2026</option>
       <option value="625">25 jun 2026</option>
-      <option value="626" selected>26 jun 2026</option>
+      <option value="626">26 jun 2026</option>
+      <option value="628">28 jun 2026</option>
+      <option value="629">29 jun 2026</option>
+      <option value="630" selected>30 jun 2026</option>
     </select>
   </div>
 
-  <span class="pill" id="pill-citas">65 citas</span>
+  <span class="pill" id="pill-citas">142 citas</span>
 </div>
 
 <!-- ===== RESUMEN ===== -->
 <div class="page active" id="p-resumen">
   <p class="lbl">Indicadores clave del período</p>
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-l">Total gestionadas</div><div class="kpi-n" id="k-total">65</div><div class="kpi-s" id="k-total-s">1 día seleccionado</div></div>
-    <div class="kpi r"><div class="kpi-l">Contactadas</div><div class="kpi-n" id="k-contact">55</div><div class="kpi-s"><span class="kpi-p" id="k-contact-p">84.6%</span> contact ratio</div></div>
-    <div class="kpi g"><div class="kpi-l">Confirman asistencia</div><div class="kpi-n" id="k-asiste">45</div><div class="kpi-s"><span class="kpi-p" id="k-asiste-p">97.8%</span> de encuestados</div></div>
-    <div class="kpi d"><div class="kpi-l">Cancelaciones</div><div class="kpi-n" id="k-cancel">1</div><div class="kpi-s"><span class="kpi-p" id="k-cancel-p">2.2%</span> cupos liberados</div></div>
+    <div class="kpi"><div class="kpi-l">Total gestionadas</div><div class="kpi-n" id="k-total">142</div><div class="kpi-s" id="k-total-s">1 día seleccionado</div></div>
+    <div class="kpi r"><div class="kpi-l">Contactadas</div><div class="kpi-n" id="k-contact">120</div><div class="kpi-s"><span class="kpi-p" id="k-contact-p">84.5%</span> contact ratio</div></div>
+    <div class="kpi g"><div class="kpi-l">Confirman asistencia</div><div class="kpi-n" id="k-asiste">96</div><div class="kpi-s"><span class="kpi-p" id="k-asiste-p">95.0%</span> de encuestados</div></div>
+    <div class="kpi d"><div class="kpi-l">Cancelaciones</div><div class="kpi-n" id="k-cancel">5</div><div class="kpi-s"><span class="kpi-p" id="k-cancel-p">5.0%</span> cupos liberados</div></div>
   </div>
 
   <div class="card ra">
-    <div class="ch"><span class="ct">Cupos liberados por especialidad</span><span class="pill-r" id="badge-cupos">1 cupos libres</span></div>
-    <div class="cd" id="cupos-desc"><strong>1 pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.</div>
+    <div class="ch"><span class="ct">Cupos liberados por especialidad</span><span class="pill-r" id="badge-cupos">5 cupos libres</span></div>
+    <div class="cd" id="cupos-desc"><strong>5 pacientes</strong> solicitaron cancelar su cita durante el período seleccionado.</div>
     <div id="cupos-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;"></div>
     <div class="aa" id="cupos-alert">⚠ <strong>Consulta Cardiología y Mesa Basculante</strong> registraron 1 cancelación cada una. Tasa general muy baja: 3.5% sobre encuestados.</div>
     <p class="note">* Detalle de agenda disponible en el archivo DETALLE de cada informe diario</p>
@@ -485,7 +494,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
     <div class="card">
       <p class="lbl">Especialidades con más cancelaciones</p>
       <div class="sl" id="mod-list"></div>
-      <div class="sep"><span>Total cancelaciones</span><span id="mod-total" style="font-weight:600;">1 · 1.5% base</span></div>
+      <div class="sep"><span>Total cancelaciones</span><span id="mod-total" style="font-weight:600;">5 · 3.5% base</span></div>
     </div>
     <div class="card">
       <p class="lbl">Cancelaciones por sede</p>
@@ -495,7 +504,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
         <div class="si"><span class="sr">3</span><span class="sn">Honda</span><span class="sc" id="sede-3">0</span><span class="bdg b-g" id="sede-3p">0.0%</span></div>
         <div class="si"><span class="sr">4</span><span class="sn">Espinal</span><span class="sc" id="sede-4">0</span><span class="bdg b-g" id="sede-4p">0.0%</span></div>
       </div>
-      <div class="sep"><span>Total</span><span style="font-weight:600;" id="sede-total">1</span></div>
+      <div class="sep"><span>Total</span><span style="font-weight:600;" id="sede-total">5</span></div>
       <div class="at" id="sede-cancel-alert">💡 Datos de cancelación por sede actualizados.</div>
     </div>
   </div>
@@ -634,14 +643,18 @@ const DATA = {
   624:{total:18,answered:13,vm:3,na:2,busy:0,inv:0,will:10,wont:1,ignored:2,tel2:16,dur:[2,0,10,1],mod:{CARDIOLOGIA:{t:5,c:0},ECO_TRANSTORACICO:{t:8,c:0},MESA_BASCULANTE:{t:5,c:1}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:18,a:13,c:1},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
   625:{total:75,answered:65,vm:5,na:5,busy:0,inv:0,will:51,wont:6,ignored:8,tel2:69,dur:[4,5,45,11],mod:{CARDIOLOGIA:{t:39,c:4},ECO_TRANSTORACICO:{t:36,c:2}},sede:{girardot:{t:28,a:25,c:2},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:47,a:40,c:4}}},
   626:{total:65,answered:55,vm:0,na:8,busy:1,inv:1,will:45,wont:1,ignored:9,tel2:34,dur:[1,7,44,3],mod:{PRUEBA_ESFUERZO:{t:6,c:0},CARDIOLOGIA:{t:28,c:0},ECO_ESTRES:{t:9,c:0},ECO_TRANSTORACICO:{t:17,c:1},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:54,a:45,c:1},ibague:{t:11,a:10,c:0},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
+  628:{total:88,answered:73,vm:7,na:5,busy:1,inv:0,will:59,wont:4,ignored:10,tel2:82,dur:[2,2,60,9],mod:{CARDIOLOGIA:{t:34,c:2},ECO_TRANSTORACICO:{t:54,c:2}},sede:{girardot:{t:88,a:73,c:4},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
+  629:{total:55,answered:44,vm:1,na:10,busy:0,inv:0,will:36,wont:1,ignored:7,tel2:49,dur:[0,4,33,7],mod:{CARDIOLOGIA:{t:32,c:0},ECO_TRANSTORACICO:{t:23,c:1}},sede:{girardot:{t:55,a:44,c:1},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
+  630:{total:142,answered:120,vm:8,na:13,busy:0,inv:0,will:96,wont:5,ignored:19,tel2:131,dur:[2,3,103,12],mod:{CARDIOLOGIA:{t:65,c:4},ECO_ESTRES:{t:9,c:0},ECO_TRANSTORACICO:{t:65,c:1},PRUEBA_ESFUERZO:{t:3,c:0}},sede:{girardot:{t:60,a:49,c:2},ibague:{t:82,a:71,c:3},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
 };
 
-const DAY_LABELS = {401:'1 abr',404:'4 abr',407:'7 abr',408:'8 abr',409:'9 abr',410:'10 abr',413:'13 abr',414:'14 abr',415:'15 abr',416:'16 abr',417:'17 abr',418:'18 abr',419:'19 abr',420:'20 abr',421:'21 abr',422:'22 abr',423:'23 abr',424:'24 abr',425:'25 abr',426:'26 abr',427:'27 abr',428:'28 abr',429:'29 abr',430:'30 abr',501:'1 may',502:'2 may',503:'3 may',504:'4 may',505:'5 may',506:'6 may',507:'7 may',508:'8 may',509:'9 may',510:'10 may',511:'11 may',512:'12 may',513:'13 may',514:'14 may',515:'15 may',519:'19 may',520:'20 may',521:'21 may',522:'22 may',523:'23 may',524:'24 may',525:'25 may',526:'26 may',527:'27 may',528:'28 may',529:'29 may',530:'30 may',602:'2 jun',603:'3 jun',604:'4 jun',605:'5 jun',606:'6 jun',607:'7 jun',608:'8 jun',609:'9 jun',610:'10 jun',611:'11 jun',612:'12 jun',615:'15 jun',616:'16 jun',617:'17 jun',618:'18 jun',619:'19 jun',620:'20 jun',622:'22 jun',623:'23 jun',624:'24 jun',625:'25 jun',626:'26 jun'};
+const DAY_LABELS = {401:'1 abr',404:'4 abr',407:'7 abr',408:'8 abr',409:'9 abr',410:'10 abr',413:'13 abr',414:'14 abr',415:'15 abr',416:'16 abr',417:'17 abr',418:'18 abr',419:'19 abr',420:'20 abr',421:'21 abr',422:'22 abr',423:'23 abr',424:'24 abr',425:'25 abr',426:'26 abr',427:'27 abr',428:'28 abr',429:'29 abr',430:'30 abr',501:'1 may',502:'2 may',503:'3 may',504:'4 may',505:'5 may',506:'6 may',507:'7 may',508:'8 may',509:'9 may',510:'10 may',511:'11 may',512:'12 may',513:'13 may',514:'14 may',515:'15 may',519:'19 may',520:'20 may',521:'21 may',522:'22 may',523:'23 may',524:'24 may',525:'25 may',526:'26 may',527:'27 may',528:'28 may',529:'29 may',530:'30 may',602:'2 jun',603:'3 jun',604:'4 jun',605:'5 jun',606:'6 jun',607:'7 jun',608:'8 jun',609:'9 jun',610:'10 jun',611:'11 jun',612:'12 jun',615:'15 jun',616:'16 jun',617:'17 jun',618:'18 jun',619:'19 jun',620:'20 jun',622:'22 jun',623:'23 jun',624:'24 jun',625:'25 jun',626:'26 jun',628:'28 jun',629:'29 jun',630:'30 jun'};
 const MOD_LABELS = {  CARDIOLOGIA:'Consulta Cardiología',  ECO_TRANSTORACICO:'Eco Transtorácico',  ECO_ESTRES:'Eco Estrés',  MESA_BASCULANTE:'Mesa Basculante',  PRUEBA_ESFUERZO:'Prueba de Esfuerzo',  ECO_TRANSESOFAGICO:'Eco Transesofágico',  HOLTER:'Holter / Mapa',  ELECTROCARDIOGRAFIA:'Electrocardiografía'};
 
 function getRange(){
   const p = document.getElementById('periodo-sel').value;
-  const MES = {abr:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430],may:[501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530],jun:[602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626],todos:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530,602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626]};
+  const MES = {abr:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430],may:[501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530],jun:[602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630],todos:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530,602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630]};
+;
 ;
 ;
 ;

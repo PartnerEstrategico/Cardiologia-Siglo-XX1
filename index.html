@@ -135,7 +135,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="hdr-sub">Gestión de confirmación de citas</div>
     </div>
   </div>
-  <div class="hdr-right" id="hdr-meta">5 jul 2026 · 55 registros</div>
+  <div class="hdr-right" id="hdr-meta">5 jul 2026 · 27 registros</div>
 </div>
 
 <!-- TABS -->
@@ -414,16 +414,16 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
     </select>
   </div>
 
-  <span class="pill" id="pill-citas">55 citas</span>
+  <span class="pill" id="pill-citas">27 citas</span>
 </div>
 
 <!-- ===== RESUMEN ===== -->
 <div class="page active" id="p-resumen">
   <p class="lbl">Indicadores clave del período</p>
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-l">Total gestionadas</div><div class="kpi-n" id="k-total">55</div><div class="kpi-s" id="k-total-s">1 día seleccionado</div></div>
-    <div class="kpi r"><div class="kpi-l">Contactadas</div><div class="kpi-n" id="k-contact">46</div><div class="kpi-s"><span class="kpi-p" id="k-contact-p">83.6%</span> contact ratio</div></div>
-    <div class="kpi g"><div class="kpi-l">Confirman asistencia</div><div class="kpi-n" id="k-asiste">40</div><div class="kpi-s"><span class="kpi-p" id="k-asiste-p">100.0%</span> de encuestados</div></div>
+    <div class="kpi"><div class="kpi-l">Total gestionadas</div><div class="kpi-n" id="k-total">27</div><div class="kpi-s" id="k-total-s">1 día seleccionado</div></div>
+    <div class="kpi r"><div class="kpi-l">Contactadas</div><div class="kpi-n" id="k-contact">22</div><div class="kpi-s"><span class="kpi-p" id="k-contact-p">81.5%</span> contact ratio</div></div>
+    <div class="kpi g"><div class="kpi-l">Confirman asistencia</div><div class="kpi-n" id="k-asiste">19</div><div class="kpi-s"><span class="kpi-p" id="k-asiste-p">100.0%</span> de encuestados</div></div>
     <div class="kpi d"><div class="kpi-l">Cancelaciones</div><div class="kpi-n" id="k-cancel">0</div><div class="kpi-s"><span class="kpi-p" id="k-cancel-p">0.0%</span> cupos liberados</div></div>
   </div>
 
@@ -662,7 +662,7 @@ const DATA = {
   701:{total:22,answered:17,vm:3,na:2,busy:0,inv:0,will:16,wont:0,ignored:1,tel2:21,dur:[1,2,10,4],mod:{CARDIOLOGIA:{t:7,c:0},ECO_TRANSTORACICO:{t:10,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:22,a:17,c:0},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
   702:{total:61,answered:54,vm:3,na:4,busy:0,inv:0,will:44,wont:0,ignored:10,tel2:58,dur:[1,4,41,8],mod:{CARDIOLOGIA:{t:22,c:0},ECO_TRANSESOFAGICO:{t:5,c:0},ECO_TRANSTORACICO:{t:29,c:0},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:56,a:49,c:0},ibague:{t:5,a:5,c:0},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
   704:{total:28,answered:24,vm:2,na:2,busy:0,inv:0,will:21,wont:0,ignored:3,tel2:26,dur:[1,2,20,1],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:14,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:28,a:24,c:0}}},
-  705:{total:55,answered:46,vm:5,na:4,busy:0,inv:0,will:40,wont:0,ignored:6,tel2:52,dur:[2,2,41,1],mod:{CARDIOLOGIA:{t:29,c:0},ECO_TRANSTORACICO:{t:26,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:55,a:46,c:0}}},
+  705:{total:27,answered:22,vm:3,na:2,busy:0,inv:0,will:19,wont:0,ignored:3,tel2:26,dur:[1,0,21,0],mod:{CARDIOLOGIA:{t:15,c:0},ECO_TRANSTORACICO:{t:12,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:27,a:22,c:0}}},
 };
 
 const DAY_LABELS = {401:'1 abr',404:'4 abr',407:'7 abr',408:'8 abr',409:'9 abr',410:'10 abr',413:'13 abr',414:'14 abr',415:'15 abr',416:'16 abr',417:'17 abr',418:'18 abr',419:'19 abr',420:'20 abr',421:'21 abr',422:'22 abr',423:'23 abr',424:'24 abr',425:'25 abr',426:'26 abr',427:'27 abr',428:'28 abr',429:'29 abr',430:'30 abr',501:'1 may',502:'2 may',503:'3 may',504:'4 may',505:'5 may',506:'6 may',507:'7 may',508:'8 may',509:'9 may',510:'10 may',511:'11 may',512:'12 may',513:'13 may',514:'14 may',515:'15 may',519:'19 may',520:'20 may',521:'21 may',522:'22 may',523:'23 may',524:'24 may',525:'25 may',526:'26 may',527:'27 may',528:'28 may',529:'29 may',530:'30 may',602:'2 jun',603:'3 jun',604:'4 jun',605:'5 jun',606:'6 jun',607:'7 jun',608:'8 jun',609:'9 jun',610:'10 jun',611:'11 jun',612:'12 jun',615:'15 jun',616:'16 jun',617:'17 jun',618:'18 jun',619:'19 jun',620:'20 jun',622:'22 jun',623:'23 jun',624:'24 jun',625:'25 jun',626:'26 jun',628:'28 jun',629:'29 jun',630:'30 jun',701:'1 jul',702:'2 jul',704:'4 jul',705:'5 jul'};
@@ -671,6 +671,7 @@ const MOD_LABELS = {  CARDIOLOGIA:'Consulta Cardiología',  ECO_TRANSTORACICO:'E
 function getRange(){
   const p = document.getElementById('periodo-sel').value;
   const MES = {abr:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430],may:[501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530],jun:[602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630],jul:[701,702,704,705],todos:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530,602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630,701,702,704,705]};
+;
 ;
   if(p==='abr'||p==='may'||p==='jun'||p==='jul') return MES[p];
   if(p==='todos') return MES.todos;

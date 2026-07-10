@@ -135,7 +135,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="hdr-sub">Gestión de confirmación de citas</div>
     </div>
   </div>
-  <div class="hdr-right" id="hdr-meta">8 jul 2026 · 99 registros</div>
+  <div class="hdr-right" id="hdr-meta">14 jul 2026 · 69 registros</div>
 </div>
 
 <!-- TABS -->
@@ -243,7 +243,13 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="704">4 jul 2026</option>
       <option value="705">5 jul 2026</option>
       <option value="707">7 jul 2026</option>
-      <option value="708" selected>8 jul 2026</option>
+      <option value="708">8 jul 2026</option>
+      <option value="709">9 jul 2026</option>
+      <option value="710">10 jul 2026</option>
+      <option value="711">11 jul 2026</option>
+      <option value="712">12 jul 2026</option>
+      <option value="713">13 jul 2026</option>
+      <option value="714" selected>14 jul 2026</option>
     </select>
   </div>
 
@@ -332,6 +338,12 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="705">5 jul 2026</option>
       <option value="707">7 jul 2026</option>
       <option value="708">8 jul 2026</option>
+      <option value="709">9 jul 2026</option>
+      <option value="710">10 jul 2026</option>
+      <option value="711">11 jul 2026</option>
+      <option value="712">12 jul 2026</option>
+      <option value="713">13 jul 2026</option>
+      <option value="714">14 jul 2026</option>
     </select>
     <label>Hasta:</label>
     <select class="fsel" id="rango-hasta" onchange="applyFilter()">
@@ -416,11 +428,17 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="704">4 jul 2026</option>
       <option value="705">5 jul 2026</option>
       <option value="707">7 jul 2026</option>
-      <option value="708" selected>8 jul 2026</option>
+      <option value="708">8 jul 2026</option>
+      <option value="709">9 jul 2026</option>
+      <option value="710">10 jul 2026</option>
+      <option value="711">11 jul 2026</option>
+      <option value="712">12 jul 2026</option>
+      <option value="713">13 jul 2026</option>
+      <option value="714" selected>14 jul 2026</option>
     </select>
   </div>
 
-  <span class="pill" id="pill-citas">99 citas</span>
+  <span class="pill" id="pill-citas">69 citas</span>
 </div>
 
 <!-- ===== RESUMEN ===== -->
@@ -671,14 +689,20 @@ const DATA = {
   705:{total:27,answered:22,vm:3,na:2,busy:0,inv:0,will:19,wont:0,ignored:3,tel2:26,dur:[1,0,21,0],mod:{CARDIOLOGIA:{t:15,c:0},ECO_TRANSTORACICO:{t:12,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:27,a:22,c:0}}},
   707:{total:83,answered:71,vm:4,na:8,busy:0,inv:0,will:55,wont:3,ignored:13,tel2:72,dur:[1,7,55,8],mod:{CARDIOLOGIA:{t:36,c:0},ECO_ESTRES:{t:15,c:1},ECO_TRANSTORACICO:{t:32,c:2}},sede:{girardot:{t:69,a:63,c:3},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:14,a:8,c:0}}},
   708:{total:99,answered:86,vm:4,na:9,busy:0,inv:0,will:72,wont:6,ignored:8,tel2:86,dur:[4,4,68,10],mod:{CARDIOLOGIA:{t:57,c:3},ECO_ESTRES:{t:15,c:0},ECO_TRANSTORACICO:{t:21,c:3},PRUEBA_ESFUERZO:{t:6,c:0}},sede:{girardot:{t:43,a:36,c:2},ibague:{t:56,a:50,c:4},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
+  709:{total:131,answered:119,vm:2,na:9,busy:0,inv:1,will:93,wont:4,ignored:22,tel2:125,dur:[5,9,88,17],mod:{CARDIOLOGIA:{t:62,c:2},ECO_ESTRES:{t:21,c:0},ECO_TRANSTORACICO:{t:43,c:2},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:69,a:64,c:4},ibague:{t:11,a:9,c:0},honda:{t:0,a:0,c:0},espinal:{t:51,a:46,c:0}}},
+  710:{total:113,answered:98,vm:8,na:6,busy:0,inv:1,will:80,wont:2,ignored:16,tel2:108,dur:[3,4,80,11],mod:{CARDIOLOGIA:{t:46,c:1},ECO_TRANSTORACICO:{t:50,c:1},PRUEBA_ESFUERZO:{t:17,c:0}},sede:{girardot:{t:83,a:72,c:2},ibague:{t:0,a:0,c:0},honda:{t:30,a:26,c:0},espinal:{t:0,a:0,c:0}}},
+  711:{total:123,answered:113,vm:3,na:6,busy:0,inv:1,will:98,wont:3,ignored:12,tel2:117,dur:[2,10,87,14],mod:{CARDIOLOGIA:{t:66,c:3},ECO_TRANSTORACICO:{t:46,c:0},PRUEBA_ESFUERZO:{t:11,c:0}},sede:{girardot:{t:77,a:73,c:2},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:46,a:40,c:1}}},
+  712:{total:66,answered:58,vm:2,na:6,busy:0,inv:0,will:49,wont:2,ignored:7,tel2:56,dur:[0,1,47,10],mod:{CARDIOLOGIA:{t:34,c:0},ECO_TRANSTORACICO:{t:32,c:2}},sede:{girardot:{t:66,a:58,c:2},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
+  713:{total:66,answered:61,vm:0,na:5,busy:0,inv:0,will:51,wont:0,ignored:10,tel2:61,dur:[0,3,49,9],mod:{CARDIOLOGIA:{t:34,c:0},ECO_TRANSTORACICO:{t:32,c:0}},sede:{girardot:{t:66,a:61,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
+  714:{total:69,answered:61,vm:4,na:4,busy:0,inv:0,will:54,wont:2,ignored:5,tel2:66,dur:[0,3,54,4],mod:{CAMINATA:{t:3,c:0},CARDIOLOGIA:{t:30,c:0},ECO_ESTRES:{t:6,c:1},ECO_TRANSTORACICO:{t:25,c:1},MESA_BASCULANTE:{t:5,c:0}},sede:{girardot:{t:21,a:20,c:1},ibague:{t:8,a:5,c:0},honda:{t:27,a:24,c:0},espinal:{t:13,a:12,c:1}}},
 };
 
-const DAY_LABELS = {401:'1 abr',404:'4 abr',407:'7 abr',408:'8 abr',409:'9 abr',410:'10 abr',413:'13 abr',414:'14 abr',415:'15 abr',416:'16 abr',417:'17 abr',418:'18 abr',419:'19 abr',420:'20 abr',421:'21 abr',422:'22 abr',423:'23 abr',424:'24 abr',425:'25 abr',426:'26 abr',427:'27 abr',428:'28 abr',429:'29 abr',430:'30 abr',501:'1 may',502:'2 may',503:'3 may',504:'4 may',505:'5 may',506:'6 may',507:'7 may',508:'8 may',509:'9 may',510:'10 may',511:'11 may',512:'12 may',513:'13 may',514:'14 may',515:'15 may',519:'19 may',520:'20 may',521:'21 may',522:'22 may',523:'23 may',524:'24 may',525:'25 may',526:'26 may',527:'27 may',528:'28 may',529:'29 may',530:'30 may',602:'2 jun',603:'3 jun',604:'4 jun',605:'5 jun',606:'6 jun',607:'7 jun',608:'8 jun',609:'9 jun',610:'10 jun',611:'11 jun',612:'12 jun',615:'15 jun',616:'16 jun',617:'17 jun',618:'18 jun',619:'19 jun',620:'20 jun',622:'22 jun',623:'23 jun',624:'24 jun',625:'25 jun',626:'26 jun',628:'28 jun',629:'29 jun',630:'30 jun',701:'1 jul',702:'2 jul',704:'4 jul',705:'5 jul',707:'7 jul',708:'8 jul'};
-const MOD_LABELS = {  CARDIOLOGIA:'Consulta Cardiología',  ECO_TRANSTORACICO:'Eco Transtorácico',  ECO_ESTRES:'Eco Estrés',  MESA_BASCULANTE:'Mesa Basculante',  PRUEBA_ESFUERZO:'Prueba de Esfuerzo',  ECO_TRANSESOFAGICO:'Eco Transesofágico',  HOLTER:'Holter / Mapa',  ELECTROCARDIOGRAFIA:'Electrocardiografía'};
+const DAY_LABELS = {401:'1 abr',404:'4 abr',407:'7 abr',408:'8 abr',409:'9 abr',410:'10 abr',413:'13 abr',414:'14 abr',415:'15 abr',416:'16 abr',417:'17 abr',418:'18 abr',419:'19 abr',420:'20 abr',421:'21 abr',422:'22 abr',423:'23 abr',424:'24 abr',425:'25 abr',426:'26 abr',427:'27 abr',428:'28 abr',429:'29 abr',430:'30 abr',501:'1 may',502:'2 may',503:'3 may',504:'4 may',505:'5 may',506:'6 may',507:'7 may',508:'8 may',509:'9 may',510:'10 may',511:'11 may',512:'12 may',513:'13 may',514:'14 may',515:'15 may',519:'19 may',520:'20 may',521:'21 may',522:'22 may',523:'23 may',524:'24 may',525:'25 may',526:'26 may',527:'27 may',528:'28 may',529:'29 may',530:'30 may',602:'2 jun',603:'3 jun',604:'4 jun',605:'5 jun',606:'6 jun',607:'7 jun',608:'8 jun',609:'9 jun',610:'10 jun',611:'11 jun',612:'12 jun',615:'15 jun',616:'16 jun',617:'17 jun',618:'18 jun',619:'19 jun',620:'20 jun',622:'22 jun',623:'23 jun',624:'24 jun',625:'25 jun',626:'26 jun',628:'28 jun',629:'29 jun',630:'30 jun',701:'1 jul',702:'2 jul',704:'4 jul',705:'5 jul',707:'7 jul',708:'8 jul',709:'9 jul',710:'10 jul',711:'11 jul',712:'12 jul',713:'13 jul',714:'14 jul'};
+const MOD_LABELS = {  CARDIOLOGIA:'Consulta Cardiología',  ECO_TRANSTORACICO:'Eco Transtorácico',  ECO_ESTRES:'Eco Estrés',  MESA_BASCULANTE:'Mesa Basculante',  PRUEBA_ESFUERZO:'Prueba de Esfuerzo',  ECO_TRANSESOFAGICO:'Eco Transesofágico',  HOLTER:'Holter / Mapa',  ELECTROCARDIOGRAFIA:'Electrocardiografía',  CAMINATA:'Prueba de Caminata'};
 
 function getRange(){
   const p = document.getElementById('periodo-sel').value;
-  const MES = {abr:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430],may:[501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530],jun:[602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630],jul:[701,702,704,705,707,708],todos:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530,602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630,701,702,704,705,707,708]};
+  const MES = {abr:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430],may:[501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530],jun:[602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630],jul:[701,702,704,705,707,708,709,710,711,712,713,714],todos:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530,602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630,701,702,704,705,707,708,709,710,711,712,713,714]};
 ;
 ;
 ;

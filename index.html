@@ -135,7 +135,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <div class="hdr-sub">Gestión de confirmación de citas</div>
     </div>
   </div>
-  <div class="hdr-right" id="hdr-meta">28 jul 2026 · 34 registros</div>
+  <div class="hdr-right" id="hdr-meta">29 jul 2026 · 36 registros</div>
 </div>
 
 <!-- TABS -->
@@ -259,7 +259,8 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="723">23 jul 2026</option>
       <option value="724">24 jul 2026</option>
       <option value="727" >27 jul 2026</option>
-          <option value="728" selected>28 jul 2026</option>
+          <option value="728" >28 jul 2026</option>
+          <option value="729" selected>29 jul 2026</option>
         </select>
   </div>
 
@@ -364,6 +365,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="724">24 jul 2026</option>
       <option value="727">27 jul 2026</option>
           <option value="728">28 jul 2026</option>
+          <option value="729">29 jul 2026</option>
         </select>
     <label>Hasta:</label>
     <select class="fsel" id="rango-hasta" onchange="applyFilter()">
@@ -464,11 +466,12 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Po
       <option value="723">23 jul 2026</option>
       <option value="724">24 jul 2026</option>
       <option value="727" >27 jul 2026</option>
-          <option value="728" selected>28 jul 2026</option>
+          <option value="728" >28 jul 2026</option>
+          <option value="729" selected>29 jul 2026</option>
         </select>
   </div>
 
-  <span class="pill" id="pill-citas">34 citas</span>
+  <span class="pill" id="pill-citas">36 citas</span>
 </div>
 
 <!-- ===== RESUMEN ===== -->
@@ -735,14 +738,15 @@ const DATA = {
   724:{total:16,answered:15,vm:1,na:0,busy:0,inv:0,will:13,wont:1,ignored:1,tel2:15,dur:[1,1,8,5],mod:{ECO_TRANSTORACICO:{t:16,c:1}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:16,a:15,c:1},honda:{t:0,a:0,c:0},espinal:{t:0,a:0,c:0}}},
   727:{total:28,answered:23,vm:3,na:2,busy:0,inv:0,will:20,wont:1,ignored:2,tel2:25,dur:[0,0,20,3],mod:{CARDIOLOGIA:{t:14,c:0},ECO_TRANSTORACICO:{t:14,c:1}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:0,a:0,c:0},honda:{t:0,a:0,c:0},espinal:{t:28,a:23,c:1}}},
   728:{total:34,answered:30,vm:0,na:3,busy:0,inv:1,will:25,wont:0,ignored:5,tel2:32,dur:[1,3,25,1],mod:{CARDIOLOGIA:{t:20,c:0},ECO_TRANSTORACICO:{t:14,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:14,a:12,c:0},honda:{t:0,a:0,c:0},espinal:{t:20,a:18,c:0}}},
+  729:{total:36,answered:32,vm:1,na:3,busy:0,inv:0,will:25,wont:1,ignored:6,tel2:36,dur:[1,2,27,2],mod:{CARDIOLOGIA:{t:15,c:1},ECO_TRANSTORACICO:{t:21,c:0}},sede:{girardot:{t:0,a:0,c:0},ibague:{t:16,a:15,c:1},honda:{t:0,a:0,c:0},espinal:{t:20,a:17,c:0}}},
 };
 
-const DAY_LABELS = {401:'1 abr',404:'4 abr',407:'7 abr',408:'8 abr',409:'9 abr',410:'10 abr',413:'13 abr',414:'14 abr',415:'15 abr',416:'16 abr',417:'17 abr',418:'18 abr',419:'19 abr',420:'20 abr',421:'21 abr',422:'22 abr',423:'23 abr',424:'24 abr',425:'25 abr',426:'26 abr',427:'27 abr',428:'28 abr',429:'29 abr',430:'30 abr',501:'1 may',502:'2 may',503:'3 may',504:'4 may',505:'5 may',506:'6 may',507:'7 may',508:'8 may',509:'9 may',510:'10 may',511:'11 may',512:'12 may',513:'13 may',514:'14 may',515:'15 may',519:'19 may',520:'20 may',521:'21 may',522:'22 may',523:'23 may',524:'24 may',525:'25 may',526:'26 may',527:'27 may',528:'28 may',529:'29 may',530:'30 may',602:'2 jun',603:'3 jun',604:'4 jun',605:'5 jun',606:'6 jun',607:'7 jun',608:'8 jun',609:'9 jun',610:'10 jun',611:'11 jun',612:'12 jun',615:'15 jun',616:'16 jun',617:'17 jun',618:'18 jun',619:'19 jun',620:'20 jun',622:'22 jun',623:'23 jun',624:'24 jun',625:'25 jun',626:'26 jun',628:'28 jun',629:'29 jun',630:'30 jun',701:'1 jul',702:'2 jul',704:'4 jul',705:'5 jul',707:'7 jul',708:'8 jul',709:'9 jul',710:'10 jul',711:'11 jul',712:'12 jul',713:'13 jul',714:'14 jul',715:'15 jul',716:'16 jul',718:'18 jul',719:'19 jul',721:'21 jul',722:'22 jul',723:'23 jul',724:'24 jul',727:'27 jul',728:'28 jul'};
+const DAY_LABELS = {401:'1 abr',404:'4 abr',407:'7 abr',408:'8 abr',409:'9 abr',410:'10 abr',413:'13 abr',414:'14 abr',415:'15 abr',416:'16 abr',417:'17 abr',418:'18 abr',419:'19 abr',420:'20 abr',421:'21 abr',422:'22 abr',423:'23 abr',424:'24 abr',425:'25 abr',426:'26 abr',427:'27 abr',428:'28 abr',429:'29 abr',430:'30 abr',501:'1 may',502:'2 may',503:'3 may',504:'4 may',505:'5 may',506:'6 may',507:'7 may',508:'8 may',509:'9 may',510:'10 may',511:'11 may',512:'12 may',513:'13 may',514:'14 may',515:'15 may',519:'19 may',520:'20 may',521:'21 may',522:'22 may',523:'23 may',524:'24 may',525:'25 may',526:'26 may',527:'27 may',528:'28 may',529:'29 may',530:'30 may',602:'2 jun',603:'3 jun',604:'4 jun',605:'5 jun',606:'6 jun',607:'7 jun',608:'8 jun',609:'9 jun',610:'10 jun',611:'11 jun',612:'12 jun',615:'15 jun',616:'16 jun',617:'17 jun',618:'18 jun',619:'19 jun',620:'20 jun',622:'22 jun',623:'23 jun',624:'24 jun',625:'25 jun',626:'26 jun',628:'28 jun',629:'29 jun',630:'30 jun',701:'1 jul',702:'2 jul',704:'4 jul',705:'5 jul',707:'7 jul',708:'8 jul',709:'9 jul',710:'10 jul',711:'11 jul',712:'12 jul',713:'13 jul',714:'14 jul',715:'15 jul',716:'16 jul',718:'18 jul',719:'19 jul',721:'21 jul',722:'22 jul',723:'23 jul',724:'24 jul',727:'27 jul',728:'28 jul',729:'29 jul'};
 const MOD_LABELS = {  CARDIOLOGIA:'Consulta Cardiología',  ECO_TRANSTORACICO:'Eco Transtorácico',  ECO_ESTRES:'Eco Estrés',  MESA_BASCULANTE:'Mesa Basculante',  PRUEBA_ESFUERZO:'Prueba de Esfuerzo',  ECO_TRANSESOFAGICO:'Eco Transesofágico',  HOLTER:'Holter / Mapa',  ELECTROCARDIOGRAFIA:'Electrocardiografía',  CAMINATA:'Prueba de Caminata'};
 
 function getRange(){
   const p = document.getElementById('periodo-sel').value;
-  const MES = {abr:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430],may:[501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530],jun:[602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630],jul:[701,702,704,705,707,708,709,710,711,712,713,714,715,716,718,719,721,722,723,724,727,728],todos:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530,602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630,701,702,704,705,707,708,709,710,711,712,713,714,715,716,718,719,721,722,723,724,727,728]};
+  const MES = {abr:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430],may:[501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530],jun:[602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630],jul:[701,702,704,705,707,708,709,710,711,712,713,714,715,716,718,719,721,722,723,724,727,728,729],todos:[401,404,407,408,409,410,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,519,520,521,522,523,524,525,526,527,528,529,530,602,603,604,605,606,607,608,609,610,611,612,615,616,617,618,619,620,622,623,624,625,626,628,629,630,701,702,704,705,707,708,709,710,711,712,713,714,715,716,718,719,721,722,723,724,727,728,729]};
 ;
 ;
 ;
